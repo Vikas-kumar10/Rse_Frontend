@@ -1,225 +1,123 @@
-// import React, { useState } from "react";
-// import { Link } from "react-router-dom";
-// import { BsFillDropletFill } from "react-icons/bs";
-// import { MessageCircleMore } from "lucide-react";
-// import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { Link, NavLink } from "react-router-dom";
+import { Menu, PhoneCall, X } from "lucide-react";
+import logo from "../image/logo.jpeg";
 
-// function Navbar() {
-//   const [open, setOpen] = useState(false);
+const navLinks = [
+  { name: "Home", link: "/" },
+  { name: "About", link: "/about" },
+  { name: "Services", link: "/services" },
+  { name: "Contact", link: "/contact" },
+];
 
-//   const navLinks = [
-//     { name: "Home", link: "/" },
-//     { name: "About", link: "/about" },
-//     { name: "Services", link: "/services" },
-//     { name: "Contact", link: "/contact" },
-//   ];
-
-//   return (
-//     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-//         {/* Logo */}
-//         <Link to="/" className="flex items-center gap-3">
-//           <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-sky-100 flex items-center justify-center shadow">
-//             <BsFillDropletFill className="text-sky-700 text-2xl sm:text-3xl" />
-//           </div>
-
-//           <div>
-//             <h1 className="text-xl sm:text-3xl font-bold leading-none">
-//               Aqua<span className="text-sky-600">Trust</span>
-//             </h1>
-
-//             <p className="hidden sm:block text-sm text-gray-500">
-//               RO Service Center
-//             </p>
-//           </div>
-//         </Link>
-
-//         {/* Desktop Menu */}
-//         <nav className="hidden lg:flex items-center gap-10">
-//           {navLinks.map((item) => (
-//             <Link
-//               key={item.name}
-//               to={item.link}
-//               className="relative font-semibold text-slate-700 hover:text-sky-600 group"
-//             >
-//               {item.name}
-
-//               <span className="absolute left-0 -bottom-2 h-0.5 w-0 bg-sky-600 transition-all duration-300 group-hover:w-full"></span>
-//             </Link>
-//           ))}
-//         </nav>
-
-//         {/* Desktop Buttons */}
-//         <div className="hidden lg:flex items-center gap-3">
-//           <button className="px-5 py-2 rounded-lg bg-sky-600 text-white hover:bg-sky-700">
-//             📞 9876543210
-//           </button>
-
-//           <button className="flex items-center gap-2 px-5 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700">
-//             <MessageCircleMore size={18} />
-//             WhatsApp
-//           </button>
-//         </div>
-
-//         {/* Mobile Menu Button */}
-//         <button onClick={() => setOpen(!open)} className="lg:hidden">
-//           {open ? <X size={30} /> : <Menu size={30} />}
-//         </button>
-//       </div>
-
-//       {/* Mobile Menu */}
-//       {open && (
-//         <div className="lg:hidden bg-white shadow-md">
-//           <div className="px-6 py-5 flex flex-col gap-5">
-//             {navLinks.map((item) => (
-//               <Link
-//                 key={item.name}
-//                 to={item.link}
-//                 onClick={() => setOpen(false)}
-//                 className="font-medium text-slate-700 hover:text-sky-600"
-//               >
-//                 {item.name}
-//               </Link>
-//             ))}
-
-//             <button className="w-full bg-sky-600 text-white py-3 rounded-lg">
-//               📞 9876543210
-//             </button>
-
-//             <button className="w-full flex items-center justify-center gap-2 bg-green-600 text-white py-3 rounded-lg">
-//               <MessageCircleMore size={18} />
-//               WhatsApp
-//             </button>
-//           </div>
-//         </div>
-//       )}
-//     </header>
-//   );
-// }
-
-// export default Navbar;
-
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { Link } from "react-router-dom";
-import { BsFillDropletFill } from "react-icons/bs";
-import { Menu, X, PhoneCall } from "lucide-react";
+const linkStyle = ({ isActive }) =>
+  `rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
+    isActive
+      ? "bg-rse-gold text-rse-text"
+      : "text-white/85 hover:bg-white/10 hover:text-rse-gold"
+  }`;
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-  const [hovered, setHovered] = useState(false);
-
-  const navLinks = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
-    { name: "Services", link: "/services" },
-    { name: "Contact", link: "/contact" },
-  ];
 
   return (
     <>
       <motion.header
-        initial={{ y: -80, opacity: 0 }}
+        initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl"
+        transition={{ duration: 0.35 }}
+        className="fixed inset-x-0 top-0 z-40 px-2.5 pt-2.5 sm:px-5 sm:pt-3"
       >
-        <div className="h-20 rounded-2xl border border-red-200 bg-white/90 backdrop-blur-xl shadow-l px-5 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <motion.div
-              whileHover={{ rotate: -8, scale: 1.08 }}
-              transition={{ duration: 0.3 }}
-              className="w-12 h-12 rounded-xl bg-sky-600 flex items-center justify-center text-white shadow-lg"
-            >
-              <BsFillDropletFill className="text-2xl" />
-            </motion.div>
-
-            <div>
-              <h1 className="text-2xl font-bold text-slate-800">
-                Aqua<span className="text-sky-600">Prime</span>
-              </h1>
-              <p className="text-xs text-slate-500">RO Service Center</p>
-            </div>
+        <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between rounded-2xl border border-rse-gold/40 bg-rse-primary/95 px-3 shadow-xl shadow-rse-primary/20 backdrop-blur-md sm:h-[4.5rem] sm:px-5 lg:px-6">
+          <span aria-hidden="true" className="absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-rse-gold/70 to-transparent" />
+          <Link to="/" className="relative flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5" aria-label="RSE RO Service Experts home">
+            <img src={logo} alt="" className="h-10 w-10 rounded-lg object-contain sm:h-12 sm:w-12" />
+            <span className="flex flex-col leading-tight">
+              <span className="text-base font-extrabold tracking-wider text-white sm:text-lg">RSE</span>
+              <span className="mt-1 whitespace-nowrap text-[0.625rem] font-bold tracking-wider text-rse-gold sm:text-xs">RO SERVICE EXPERTS</span>
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center bg-slate-100 rounded-full p-1">
+          <nav aria-label="Main navigation" className="hidden items-center gap-1 xl:flex">
             {navLinks.map((item) => (
-              <motion.div key={item.name} whileHover={{ y: -2 }}>
-                <Link
-                  to={item.link}
-                  className="px-6 py-2 rounded-full font-medium text-slate-700 hover:bg-white hover:text-sky-600 transition"
-                >
-                  {item.name}
-                </Link>
-              </motion.div>
+              <NavLink key={item.name} to={item.link} end={item.link === "/"} className={linkStyle}>
+                {item.name}
+              </NavLink>
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden lg:block">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 bg-red-600 hover:bg-green-700 text-white px-6 py-3 rounded-full shadow-lg transition"
-            >
-              <PhoneCall size={18} />
-              Book Service
-            </motion.button>
+          <div className="hidden items-center gap-2 xl:flex">
+            <a href="tel:+917979076001" className="flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/10 hover:text-rse-gold" aria-label="Call +91 79790 76001">
+              <PhoneCall size={17} aria-hidden="true" />
+              <span className="hidden xl:inline">+91 79790 76001</span>
+              <span className="xl:hidden">Call</span>
+            </a>
+            <Link to="/contact" className="rounded-full border border-rse-crimson bg-rse-crimson px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-rse-crimson/20 transition hover:border-rse-gold hover:bg-rse-gold hover:text-rse-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rse-gold">
+              Book a Service
+            </Link>
           </div>
 
-          {/* Mobile Menu */}
-          <button onClick={() => setOpen(true)} className="lg:hidden">
-            <Menu size={30} />
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label="Open navigation menu"
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
+            className="rounded-lg p-2 text-white transition hover:bg-white/10 hover:text-rse-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-rse-gold xl:hidden"
+          >
+            <Menu size={25} aria-hidden="true" />
           </button>
         </div>
       </motion.header>
 
-      {/* Mobile Drawer */}
       <AnimatePresence>
         {open && (
           <motion.div
+            className="fixed inset-0 z-50 bg-rse-primary/65 xl:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/40 lg:hidden"
             onClick={() => setOpen(false)}
           >
-            <motion.div
-              initial={{ x: 300 }}
+            <motion.nav
+              id="mobile-navigation"
+              aria-label="Mobile navigation"
+              className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col border-l border-rse-gold/40 bg-rse-primary p-6 shadow-2xl"
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: 300 }}
-              transition={{ duration: 0.3 }}
-              className="absolute right-0 top-0 h-full w-72 bg-white shadow-xl p-6"
-              onClick={(e) => e.stopPropagation()}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.22 }}
+              onClick={(event) => event.stopPropagation()}
             >
-              <div className="flex justify-between items-center mb-8">
-                <h2 className="text-xl font-bold">Menu</h2>
-
-                <button onClick={() => setOpen(false)}>
-                  <X size={28} />
+              <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-5">
+                <Link to="/" onClick={() => setOpen(false)} aria-label="RSE RO Service Experts home" className="flex items-center gap-2.5">
+                  <img src={logo} alt="" className="h-12 w-12 rounded-lg object-contain" />
+                  <span className="flex flex-col leading-tight">
+                    <span className="text-lg font-extrabold tracking-wider text-white">RSE</span>
+                    <span className="mt-1 text-xs font-bold tracking-wider text-rse-gold">RO SERVICE EXPERTS</span>
+                  </span>
+                </Link>
+                <button type="button" onClick={() => setOpen(false)} aria-label="Close navigation menu" className="rounded-lg p-2 text-white hover:bg-white/10 hover:text-rse-gold">
+                  <X size={23} aria-hidden="true" />
                 </button>
               </div>
-
               <div className="flex flex-col gap-2">
                 {navLinks.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.link}
-                    onClick={() => setOpen(false)}
-                    className="px-4 py-3 rounded-xl hover:bg-sky-50 hover:text-sky-600 transition font-medium"
-                  >
+                  <NavLink key={item.name} to={item.link} end={item.link === "/"} onClick={() => setOpen(false)} className={linkStyle}>
                     {item.name}
-                  </Link>
+                  </NavLink>
                 ))}
               </div>
-
-              <button className="w-full mt-8 bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl flex items-center justify-center gap-2">
-                <PhoneCall size={18} />
-                Book Service
-              </button>
-            </motion.div>
+              <div className="mt-auto grid gap-3 border-t border-white/10 pt-5">
+                <a href="tel:+917979076001" className="flex items-center justify-center gap-2 rounded-xl border border-rse-gold/60 px-4 py-3 font-semibold text-white transition hover:bg-white/10 hover:text-rse-gold">
+                  <PhoneCall size={18} aria-hidden="true" /> Call +91 79790 76001
+                </a>
+                <Link to="/contact" onClick={() => setOpen(false)} className="rounded-xl bg-rse-crimson px-4 py-3 text-center font-bold text-white transition hover:bg-rse-gold hover:text-rse-text">
+                  Book a Service
+                </Link>
+              </div>
+            </motion.nav>
           </motion.div>
         )}
       </AnimatePresence>

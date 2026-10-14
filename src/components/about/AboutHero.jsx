@@ -1,90 +1,56 @@
-import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { motion } from "motion/react";
-import banner from "../../assets/images/about-banner.jpg";
+import { Link } from "react-router-dom";
+import banner from "../../assets/images/maintanence.jpg";
 
 function AboutHero() {
   return (
-    <section
-      className="relative h-[85vh] flex items-center bg-cover bg-center"
-      style={{ backgroundImage: `url(${banner})` }}
-    >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/70"></div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-13 w-full top-4">
+    <section className="relative flex min-h-96 items-center overflow-hidden bg-rse-primary pt-24 sm:min-h-screen">
+      <img
+        src={banner}
+        alt="Water purifier technician assisting a customer at home"
+        className="absolute inset-0 h-full w-full object-cover object-center opacity-40"
+      />
+      <div className="absolute inset-0  from-rse-primary via-rse-primary/90 to-rse-primary/35" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0  from-amber-100/10 to-transparent"
+      />
+      <div className="relative mx-auto w-full max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
         <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55 }}
           className="max-w-2xl text-white"
         >
-          <motion.h1
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35 }}
-            className="mt-6 text-5xl lg:text-6xl font-bold leading-tight"
-          >
-            Delivering Pure Water
-            <br />
-            <span className="text-sky-400">Solutions You Can Trust</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.55 }}
-            className="mt-6 text-lg text-gray-300 leading-8"
-          >
-            We provide reliable residential, commercial and industrial water
-            treatment solutions with advanced technology, experienced
-            technicians and dependable after-sales support.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.75 }}
-            className="flex flex-wrap gap-4 mt-10"
-          >
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                y: -2,
-              }}
-              whileTap={{ scale: 0.96 }}
-              className="flex items-center gap-2 bg-sky-600 hover:bg-sky-700 px-7 py-3 rounded-xl font-semibold shadow-lg"
+          
+          <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            About RSE <span className="text-rse-gold">RO Service Experts</span>
+          </h1>
+          <p className="mt-6 max-w-xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8">
+            We help homes and workplaces keep their water purifiers in good
+            shape with repair, installation and regular service.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 rounded-xl bg-rse-gold px-6 py-3.5 font-bold text-rse-text transition hover:-translate-y-0.5 hover:bg-white"
             >
-              Our Services
-              <motion.span
-                animate={{
-                  x: [0, 6, 0],
-                  scale: [1, 0.85, 1],
-                }}
-                transition={{
-                  duration: 1,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <ArrowRight size={18} />
-              </motion.span>
-            </motion.button>
-
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                y: -2,
-              }}
-              whileTap={{ scale: 0.96 }}
-              className="border border-white/70 px-7 py-3 rounded-xl hover:bg-white hover:text-slate-900 transition font-semibold"
+              Explore our services <ArrowRight size={18} />
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center rounded-xl border border-white/35 px-6 py-3.5 font-semibold text-white transition hover:border-rse-gold hover:bg-white/10"
             >
-              Contact Us
-            </motion.button>
-          </motion.div>
+              Talk to our team
+            </Link>
+          </div>
         </motion.div>
       </div>
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-px  from-transparent via-rse-gold/70 to-transparent"
+      />
     </section>
   );
 }

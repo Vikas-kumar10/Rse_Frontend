@@ -1,91 +1,98 @@
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Clock3, Mail, MapPin, Phone } from "lucide-react";
 
 const info = [
   {
-    icon: <Phone size={26} />,
-    title: "Call Us",
+    icon: Phone,
+    title: "Call RSE",
     value: "+91 79790 76001",
-    desc: "Mon - Sun | 8:00 AM - 8:00 PM",
+    detail: "Speak with our service team",
+    href: "tel:+917979076001",
   },
   {
-    icon: <Mail size={26} />,
-    title: "Email Us",
-    value: "support@company.com",
-    desc: "We'll reply within 24 hours",
+    icon: Mail,
+    title: "Email us",
+    value: "info@aquaprimeservices.com",
+    detail: "Send us your service question",
+    href: "mailto:info@aquaprimeservices.com",
   },
   {
-    icon: <MapPin size={26} />,
-    title: "Visit Office",
+    icon: MapPin,
+    title: "Service location",
     value: "Patna, Bihar",
-    desc: "On-site Service Available",
+    detail: "Home and workplace visits",
+    href: "https://maps.google.com/?q=Patna,Bihar",
+    external: true,
   },
   {
-    icon: <Clock size={26} />,
-    title: "Working Hours",
-    value: "8:00 AM - 8:00 PM",
-    desc: "Monday - Sunday",
+    icon: Clock3,
+    title: "Working hours",
+    value: "8:00 AM – 8:00 PM",
+    detail: "Monday to Sunday",
+    href: null,
   },
 ];
 
 function ContactInfo() {
   return (
-    <section className="py-20  from-white to-slate-100">
-      <div className="max-w-7xl mx-auto px-6">
-
-        {/* Heading */}
-        <div className="text-center mb-14">
-          <span className="inline-block px-4 py-2 rounded-full bg-sky-100 text-sky-700 text-sm font-semibold">
-            Contact Information
+    <section
+      id="contact-options"
+      className="scroll-mt-24 bg-white py-16 sm:py-20"
+    >
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mb-10 max-w-2xl">
+          <span className="text-xs font-bold uppercase tracking-wider text-rse-crimson">
+            Get in touch
           </span>
-
-          <h2 className="mt-4 text-4xl font-bold text-slate-900">
-            We're Always Here to Help
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-rse-text sm:text-4xl">
+            We’re easy to reach.
           </h2>
-
-          <p className="mt-3 max-w-2xl mx-auto text-slate-600">
-            Reach out to our team for RO installation, maintenance,
-            repairs, and water treatment solutions.
+          <p className="mt-3 leading-7 text-slate-600">
+            Choose the way that works best for you. We’re here for RO service
+            enquiries in Patna.
           </p>
         </div>
-
-        {/* Cards */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-
-          {info.map((item, index) => (
-            <div
-              key={index}
-              className="group relative bg-white rounded-2xl border border-slate-200 p-8 text-center shadow-sm hover:shadow-l hover:-translate-y-2 transition-all duration-300"
-            >
-
-              {/* Top Border */}
-              <div className="absolute top-0 left-0 w-full h-1 rounded-t-2xl bg-sky-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-
-              {/* Icon */}
-              <div className="w-16 h-16 mx-auto rounded-full bg-sky-100 text-sky-600 flex items-center justify-center group-hover:bg-sky-600 group-hover:text-white transition-all duration-300">
-                {item.icon}
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {info.map(({ icon: Icon, title, value, detail, href, external }) => {
+            const content = (
+              <>
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-rse-gold/20 text-rse-text">
+                  <Icon size={21} />
+                </span>
+                <span className="mt-5 block text-xs font-bold uppercase tracking-wider text-rse-gold">
+                  {title}
+                </span>
+                <span className="mt-2 block break-words font-bold text-rse-text">
+                  {value}
+                </span>
+                <span className="mt-1 block text-sm text-slate-500">
+                  {detail}
+                </span>
+              </>
+            );
+            return href ? (
+              <a
+                key={title}
+                href={href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noreferrer" : undefined}
+                className="rounded-2xl border border-slate-200 bg-rse-surface p-5 transition hover:-translate-y-1 hover:border-rse-gold/70 hover:bg-white hover:shadow-lg"
+              >
+                {content}
+              </a>
+            ) : (
+              <div
+                key={title}
+                className="rounded-2xl border border-slate-200 bg-rse-surface p-5"
+              >
+                {content}
               </div>
-
-              {/* Content */}
-              <h3 className="mt-6 text-xl font-semibold text-slate-900">
-                {item.title}
-              </h3>
-
-              <p className="mt-2 font-medium text-slate-700">
-                {item.value}
-              </p>
-
-              <p className="mt-2 text-sm text-slate-500 leading-6">
-                {item.desc}
-              </p>
-
-            </div>
-          ))}
-
+            );
+          })}
         </div>
-
       </div>
     </section>
   );
 }
 
 export default ContactInfo;
+

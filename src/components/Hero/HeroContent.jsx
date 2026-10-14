@@ -1,139 +1,108 @@
-import { ArrowRight, Phone, ShieldCheck, Droplets } from "lucide-react";
+﻿import {
+  ArrowRight,
+  Check,
+  Droplets,
+  MapPin,
+  PhoneCall,
+  Wrench,
+} from "lucide-react";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
+
+const services = [
+  "RO repair & servicing",
+  "Installation & filter change",
+  "AMC for home and office",
+];
 
 function HeroContent() {
   return (
-    <div>
-      {/* Badge */}
-      <motion.span
-        initial={{ opacity: 0, y: -25 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-sky-100 text-sky-700 font-medium"
-      >
-        <Droplets size={18} />
-        Trusted Water Treatment Company
-      </motion.span>
-
-      {/* Heading */}
+    <div className="relative z-10 max-w-2xl">
+      
       <motion.h1
-        initial={{ opacity: 0, x: -60 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.2, duration: 0.7 }}
-        className="mt-6 text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900"
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1, duration: 0.55 }}
+        className="mt-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
       >
-        Pure Water
-        <br />
-        <span className="text-sky-600">Better Tomorrow</span>
+        Clean water starts with{" "}
+        <span className="relative inline-block text-rse-gold">
+          expert RO care.
+          <span
+            aria-hidden="true"
+            className="absolute -bottom-1 left-0 h-1 w-2/3 rounded-full bg-rse-gold"
+          />
+        </span>
       </motion.h1>
 
-      {/* Paragraph */}
       <motion.p
-        initial={{ opacity: 0, y: 35 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.7 }}
-        className="mt-8 text-lg text-gray-600 leading-8"
+        transition={{ delay: 0.2, duration: 0.55 }}
+        className="mt-6 max-w-xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8"
       >
-        We specialize in residential, commercial, and industrial water
-        purification systems, offering complete installation, maintenance, and
-        annual service solutions.
+        From RO repairs and filter changes to new installations and AMC, RSE
+        helps keep your home or workplace purifier in good shape.
       </motion.p>
 
-      {/* Buttons */}
       <motion.div
-        initial={{ opacity: 0, y: 35 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.6 }}
-        className="flex flex-wrap gap-5 mt-10"
+        transition={{ delay: 0.3, duration: 0.5 }}
+        className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
       >
-        <motion.button
-          whileHover={{
-            scale: 1.05,
-            y: -3,
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-2 px-8 py-4 rounded-xl bg-sky-600 text-white shadow-lg hover:bg-sky-700"
+        <Link
+          to="/contact"
+          className="group inline-flex min-h-13 items-center justify-center gap-2 rounded-xl bg-rse-gold px-6 py-3.5 font-bold text-rse-text shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rse-gold"
         >
-          Get Free Quote
-          <motion.div
-            animate={{ x: [0, 5, 0] }}
-            transition={{
-              duration: 1.2,
-              repeat: Infinity,
-            }}
-          >
-            <ArrowRight size={20} />
-          </motion.div>
-        </motion.button>
-
-        <motion.button
-          whileHover={{
-            scale: 1.05,
-            y: -3,
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-2 px-8 py-4 rounded-xl border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white transition"
+          Book an RO Service
+          <ArrowRight
+            size={19}
+            className="transition-transform group-hover:translate-x-1"
+            aria-hidden="true"
+          />
+        </Link>
+        <a
+          href="tel:+917979076001"
+          className="inline-flex min-h-13 items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/5 px-6 py-3.5 font-bold text-white transition hover:border-rse-gold hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rse-gold"
         >
-          <Phone size={18} />
-          Call Now
-        </motion.button>
+          <PhoneCall size={18} aria-hidden="true" />
+          Call +91 79790 76001
+        </a>
       </motion.div>
 
-      {/* Features */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-14">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          whileHover={{ y: -6 }}
-          className="flex gap-4"
-        >
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-            }}
-          >
-            <ShieldCheck className="text-sky-600" size={42} />
-          </motion.div>
-
-          <div>
-            <h3 className="font-bold text-lg">Certified Quality</h3>
-
-            <p className="text-gray-500 text-sm mt-1">
-              Trusted products and expert installation.
-            </p>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
-          whileHover={{ y: -6 }}
-          className="flex gap-4"
-        >
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              delay: 0.5,
-            }}
-          >
-            <Droplets className="text-sky-600" size={42} />
-          </motion.div>
-
-          <div>
-            <h3 className="font-bold text-lg">Safe Drinking Water</h3>
-
-            <p className="text-gray-500 text-sm mt-1">
-              Healthy water for your family.
-            </p>
-          </div>
-        </motion.div>
-      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.45, duration: 0.5 }}
+        className="mt-9 border-t border-white/15 pt-6"
+      >
+        <p className="mb-4 text-xs font-bold uppercase tracking-wider text-rse-gold">
+          How we can help
+        </p>
+        <ul className="grid gap-x-5 gap-y-3 sm:grid-cols-2">
+          {services.map((service, index) => (
+            <motion.li
+              key={service}
+              initial={{ opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 + index * 0.08, duration: 0.35 }}
+              className="flex items-center gap-2.5 text-sm font-medium text-white/80"
+            >
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-rse-gold/20 text-rse-gold">
+                {index === 0 ? (
+                  <Wrench size={13} aria-hidden="true" />
+                ) : index === 1 ? (
+                  <Droplets size={13} aria-hidden="true" />
+                ) : (
+                  <Check size={14} aria-hidden="true" />
+                )}
+              </span>
+              {service}
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
     </div>
   );
 }

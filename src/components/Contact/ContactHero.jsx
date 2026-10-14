@@ -1,107 +1,76 @@
-import { Phone, MessageCircle } from "lucide-react";
+import { ArrowDown, MapPin, PhoneCall, MessageCircle } from "lucide-react";
 import { motion } from "motion/react";
+import heroPhoto from "../../assets/images/Ro_purify.jpg";
 
 function ContactHero() {
   return (
-    <section className="relative overflow-hidden bg-sky-700 text-white">
-      {/* Animated Background Glow */}
-      <motion.div
-        animate={{
-          scale: [1, 1.15, 1],
-          opacity: [0.2, 0.35, 0.2],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-        }}
-        className="absolute -top-32 -left-20 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl"
+    <section className="relative overflow-hidden bg-rse-primary pb-16 pt-32 text-white sm:pb-20 sm:pt-36">
+      <div
+        aria-hidden="true"
+        className="absolute -right-40 -top-44 h-96 w-96 rounded-full border border-rse-gold/15"
       />
-
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.15, 0.3, 0.15],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-        }}
-        className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"
-      />
-
-      <div className="relative max-w-7xl mx-auto px-6 py-28 text-center">
-        {/* Badge */}
-        <motion.span
-          initial={{ opacity: 0, y: 25 }}
+      <div className="absolute inset-y-0 right-0 hidden w-1/2 lg:block">
+        <img
+          src={heroPhoto}
+          alt=""
+          className="h-full w-full object-cover opacity-35"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-rse-primary via-rse-primary/70 to-rse-primary/30" />
+      </div>
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-2 lg:px-10">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 rounded-full border border-cyan-300/40 bg-white/10 px-5 py-2 backdrop-blur text-cyan-100"
         >
-          💧 Trusted Water Treatment Experts
-        </motion.span>
-
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 35 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-8 text-5xl md:text-6xl font-extrabold leading-tight"
-        >
-          Contact Our Experts
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="block text-cyan-300"
+          
+          <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            Let’s get your RO{" "}
+            <span className="text-rse-gold">back on track.</span>
+          </h1>
+          <p className="mt-5 max-w-xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
+            Need a repair, installation or routine maintenance? Contact RSE and
+            tell us what your water purifier needs.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="tel:+917979076001"
+              className="inline-flex items-center gap-2 rounded-xl bg-rse-gold px-5 py-3.5 font-bold text-rse-text transition hover:-translate-y-0.5 hover:bg-white"
+            >
+              <PhoneCall size={18} /> Call +91 79790 76001
+            </a>
+            <a
+              href="https://wa.me/917979076001"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/25 px-5 py-3.5 font-semibold text-white transition hover:border-rse-gold hover:bg-white/5"
+            >
+              <MessageCircle size={18} /> WhatsApp us
+            </a>
+          </div>
+          <a
+            href="#contact-options"
+            className="mt-9 inline-flex items-center gap-2 text-sm font-medium text-white/60 transition hover:text-rse-gold"
           >
-            Anytime, Anywhere
-          </motion.span>
-        </motion.h1>
-
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 35 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-200"
-        >
-          Whether you need RO installation, annual maintenance, filter
-          replacement, or emergency repair, our certified engineers are
-          available to provide fast and reliable support.
-        </motion.p>
-
-        {/* Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
-          className="mt-10 flex flex-wrap justify-center gap-4"
-        >
-          <motion.button
-            whileHover={{
-              y: -3,
-              boxShadow: "0 18px 40px rgba(0,0,0,.18)",
-            }}
-            whileTap={{ scale: 0.96 }}
-            className="flex items-center gap-2 rounded-full bg-white px-7 py-3 font-semibold text-sky-700"
-          >
-            <Phone size={18} />
-            Call Now
-          </motion.button>
-
-          <motion.button
-            whileHover={{
-              y: -3,
-              backgroundColor: "#ffffff",
-              color: "#0369a1",
-            }}
-            whileTap={{ scale: 0.96 }}
-            className="flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3 font-semibold backdrop-blur transition-colors"
-          >
-            <MessageCircle size={18} />
-            WhatsApp
-          </motion.button>
+            See all contact options <ArrowDown size={15} />
+          </a>
         </motion.div>
+        <div className="relative z-10 hidden lg:block">
+          <div className="rounded-2xl border border-white/15 bg-rse-primary/70 p-7 shadow-2xl backdrop-blur-md">
+            <p className="text-xs font-bold uppercase tracking-wider text-rse-gold">
+              How can we help?
+            </p>
+            <p className="mt-3 text-2xl font-semibold leading-snug">
+              RO repair, installation & purifier care for your home or
+              workplace.
+            </p>
+            <div className="mt-6 h-px bg-white/15" />
+            <p className="mt-5 text-sm leading-6 text-white/65">
+              Call our team or send a service request. We’ll help you figure out
+              the next step.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

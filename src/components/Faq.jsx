@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ChevronDown, HelpCircle } from "lucide-react";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 function Faq() {
   const [active, setActive] = useState(0);
@@ -34,18 +35,18 @@ function Faq() {
   ];
 
   return (
-    <section className="py-10 bg-red from-slate-50 to-white">
+    <section className="bg-rse-surface py-20 sm:py-24">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-sky-100 text-sky-700 font-semibold">
-            <HelpCircle size={18} />
+          <div className="inline-flex items-center gap-2 rounded-full border border-rse-gold/50 bg-white px-5 py-2 font-semibold text-rse-text">
+            <HelpCircle size={18} className="text-rse-crimson" />
             Frequently Asked Questions
           </div>
 
-          <h2 className="text-5xl font-bold text-slate-900 mt-6">
+          <h2 className="mt-6 text-3xl font-bold text-rse-text sm:text-4xl">
             Find Answers To
-            <span className="text-sky-600"> Common Questions</span>
+            <span className="text-rse-gold"> Common Questions</span>
           </h2>
 
           <p className="mt-5 text-slate-600 text-lg max-w-3xl mx-auto leading-8">
@@ -59,19 +60,22 @@ function Faq() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden hover:shadow-xl transition duration-300"
+              className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-rse-gold/60 hover:shadow-lg"
             >
               <button
                 onClick={() => setActive(active === index ? null : index)}
-                className="w-full flex justify-between items-center p-7 text-left"
+                aria-expanded={active === index}
+                className="flex w-full items-center justify-between p-6 text-left sm:p-7"
               >
-                <h3 className="text-xl font-semibold text-slate-800">
+                <h3 className="text-base font-semibold text-rse-text sm:text-lg">
                   {faq.question}
                 </h3>
 
                 <ChevronDown
                   className={`transition-transform duration-300 ${
-                    active === index ? "rotate-180 text-sky-600" : ""
+                    active === index
+                      ? "rotate-180 text-rse-crimson"
+                      : "text-slate-500"
                   }`}
                 />
               </button>
@@ -99,7 +103,7 @@ function Faq() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           whileHover={{ y: -4 }}
-          className="relative mt-16 overflow-hidden rounded-3xl bg-sky-700 from-sky-600 to-cyan-500 p-10 text-center text-white shadow-2xl"
+          className="relative mt-14 overflow-hidden rounded-3xl bg-rse-primary p-8 text-center text-white shadow-2xl sm:p-10"
         >
           {/* Background Decoration */}
           <div className="absolute -top-16 -left-16 h-40 w-40 rounded-full bg-white/10"></div>
@@ -118,23 +122,18 @@ function Faq() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.35 }}
-            className="relative mx-auto mt-4 max-w-2xl text-sky-100 leading-7"
+            className="relative mx-auto mt-4 max-w-2xl leading-7 text-white/70"
           >
             Our experts are available to help you choose the best RO solution
             and provide quick support whenever you need it.
           </motion.p>
 
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              y: -2,
-            }}
-            whileTap={{ scale: 0.96 }}
-            transition={{ duration: 0.2 }}
-            className="relative mt-8 rounded-full bg-white px-8 py-4 font-semibold text-sky-700 shadow-lg transition"
+          <Link
+            to="/contact"
+            className="relative mt-8 inline-flex rounded-full bg-rse-gold px-8 py-4 font-semibold text-rse-text shadow-lg transition hover:bg-white"
           >
             Contact Our Team →
-          </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

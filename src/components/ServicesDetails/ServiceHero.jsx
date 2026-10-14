@@ -1,153 +1,87 @@
-import React from "react";
+import { ArrowRight, Droplets, MapPin, PhoneCall } from "lucide-react";
 import { motion } from "motion/react";
-import {
-  Wrench,
-  ArrowRight,
-  ShieldCheck,
-  Droplets,
-} from "lucide-react";
+import { Link } from "react-router-dom";
+import heroPhoto from "../../assets/images/maintanence.jpg";
 
 function ServiceHero() {
-  const features = [
-    "Certified RO Engineers",
-    "Same Day Service",
-    "Affordable Pricing",
-    "Genuine Spare Parts",
-  ];
-
   return (
-    <section className="bg-sky-600 text-white py-28 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-
-        {/* Left Content */}
+    <section className="relative overflow-hidden bg-rse-primary pb-16 pt-28 text-white sm:pb-20 sm:pt-36">
+      <div
+        aria-hidden="true"
+        className="absolute -right-40 -top-40 h-96 w-96 rounded-full border border-rse-gold/15"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute -right-20 -top-20 h-96 w-96 rounded-full border border-rse-gold/10"
+      />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-10">
         <motion.div
-          initial={{ opacity: 0, x: -70 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <motion.span
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-2 rounded-full text-sm"
-          >
-            <Droplets size={18} />
-            Professional Water Solutions
-          </motion.span>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="mt-6 text-5xl font-bold leading-tight"
-          >
-            RO Repair &
-            <span className="block text-">
-              Maintenance Services
+          
+          <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            RO services for the care your purifier{" "}
+            <span className="text-rse-gold">needs.</span>
+          </h1>
+          <p className="mt-5 max-w-xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
+            Browse repair, installation, filter replacement and maintenance.
+            Choose a service to learn more or get in touch with our team.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="#ro-services"
+              className="inline-flex items-center gap-2 rounded-xl bg-rse-gold px-6 py-3.5 font-bold text-rse-text transition hover:-translate-y-0.5 hover:bg-white"
+            >
+              Browse services <ArrowRight size={18} />
+            </a>
+            <a
+              href="tel:+917979076001"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/25 px-5 py-3.5 font-semibold text-white transition hover:border-rse-gold hover:bg-white/5"
+            >
+              <PhoneCall size={17} /> Call our team
+            </a>
+          </div>
+          <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 border-t border-white/15 pt-6 text-sm text-white/75">
+            <span className="inline-flex items-center gap-2">
+              <Droplets size={16} className="text-rse-gold" /> Home & workplace
+              purifier care
             </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="mt-6 text-blue-100 text-lg max-w-xl"
-          >
-            We provide installation, repair, AMC plans, filter replacement,
-            and complete RO maintenance for homes, offices, and industries.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-wrap gap-4 mt-8"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 bg-white text-sky-700 px-6 py-3 rounded-full font-semibold shadow-lg"
-            >
-              Book Service
-              <ArrowRight size={18} />
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="border border-white px-6 py-3 rounded-full hover:bg-white hover:text-sky-700 transition"
-            >
-              Contact Us
-            </motion.button>
-          </motion.div>
+            <span className="inline-flex items-center gap-2">
+              <Droplets size={16} className="text-rse-gold" /> Repair, install &
+              maintain
+            </span>
+          </div>
         </motion.div>
 
-        {/* Right Card */}
         <motion.div
-          initial={{ opacity: 0, x: 70 }}
+          initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          whileHover={{ y: -8 }}
-          className="bg-white rounded-3xl p-8 shadow-2xl"
+          transition={{ duration: 0.55, delay: 0.08 }}
+          className="relative mx-auto w-full max-w-xl"
         >
-          <h3 className="text-2xl font-bold text-slate-800 mb-6">
-            Why Choose Us?
-          </h3>
-
-          <div className="space-y-5">
-            {features.map((item, index) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 * index }}
-                whileHover={{ x: 6 }}
-                className="flex items-center gap-3"
-              >
-                <motion.div
-                  animate={{ rotate: [0, 8, -8, 0] }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    delay: index,
-                  }}
-                  className="p-2 rounded-full bg-sky-100 text-sky-600"
-                >
-                  <ShieldCheck size={20} />
-                </motion.div>
-
-                <p className="text-slate-700 font-medium">{item}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="mt-8 flex items-center gap-3 rounded-xl bg-sky-50 p-4"
-          >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            >
-              <Wrench className="text-sky-600" size={28} />
-            </motion.div>
-
+          <div
+            aria-hidden="true"
+            className="absolute -inset-3 rotate-2 rounded-3xl border border-rse-gold/45"
+          />
+          <img
+            src={heroPhoto}
+            alt="Water purifier technician talking with a customer at home"
+            className="relative aspect-video w-full rounded-3xl object-cover shadow-2xl shadow-black/30"
+          />
+          <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 rounded-2xl border border-white/50 bg-white/95 p-4 text-rse-text shadow-xl backdrop-blur sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-sm sm:p-5">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-rse-primary text-rse-gold">
+              <Droplets size={22} />
+            </span>
             <div>
-              <h4 className="font-semibold text-slate-800">
-                500+ Services Completed
-              </h4>
-
-              <p className="text-sm text-slate-500">
-                Trusted by hundreds of happy customers.
+              <p className="font-bold">Water purifier care</p>
+              <p className="mt-0.5 text-xs text-slate-600">
+                At home or at your workplace
               </p>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
-
       </div>
     </section>
   );

@@ -1,130 +1,152 @@
-import React from "react";
-import {
-  Wrench,
-  Settings,
-  Droplets,
-  ShieldCheck,
-  Filter,
-  BadgeCheck,
-} from "lucide-react";
 import { motion } from "motion/react";
+import {
+  ArrowRight,
+  Check,
+  Droplets,
+  Filter,
+  Gauge,
+  Settings,
+  ShieldCheck,
+  Wrench,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import repairPhoto from "../../assets/images/repair.jpg";
+import homeVisitPhoto from "../../assets/images/maintanence.jpg";
+import purifierPhoto from "../../assets/images/Ro_purify.jpg";
 
 const services = [
   {
-    title: "RO Repair",
-    icon: <Wrench size={28} />,
-    desc: "Fast diagnosis and repair for all RO systems.",
+    title: "RO repair",
+    category: "REPAIR",
+    icon: Wrench,
+    image: repairPhoto,
+    alt: "Technician repairing a water purifier",
+    description:
+      "Get help with purifier issues such as low water flow, leakage, unusual taste or a system that is not working properly.",
+    details: ["Issue inspection", "Repair recommendations"],
   },
   {
-    title: "RO Installation",
-    icon: <Settings size={28} />,
-    desc: "Professional installation with quality assurance.",
+    title: "RO installation",
+    category: "INSTALLATION",
+    icon: Settings,
+    image: purifierPhoto,
+    alt: "Reverse osmosis purifier installed under a kitchen sink",
+    description:
+      "Set up a new water purifier or replace an existing unit with a clean, considered installation for your space.",
+    details: ["New purifier setup", "Replacement installation"],
   },
   {
-    title: "Filter Replacement",
-    icon: <Filter size={28} />,
-    desc: "Original filters for safe and pure drinking water.",
+    title: "Filter replacement",
+    category: "FILTER CARE",
+    icon: Filter,
+    image: repairPhoto,
+    alt: "Water purifier components being serviced",
+    description:
+      "Replace purifier filters when required and get guidance on keeping up with routine filter care.",
+    details: ["Filter condition check", "Replacement guidance"],
   },
   {
-    title: "AMC Service",
-    icon: <ShieldCheck size={28} />,
-    desc: "Annual maintenance plans for worry-free performance.",
+    title: "RO maintenance",
+    category: "REGULAR CARE",
+    icon: ShieldCheck,
+    image: homeVisitPhoto,
+    alt: "Technician discussing water purifier maintenance with a customer",
+    description:
+      "Keep your purifier in good working order with periodic inspection and maintenance support.",
+    details: ["System inspection", "Routine care"],
   },
   {
-    title: "Water Purification",
-    icon: <Droplets size={28} />,
-    desc: "Complete purification solutions for homes & offices.",
+    title: "Water quality & TDS check",
+    category: "WATER CHECK",
+    icon: Gauge,
+    image: purifierPhoto,
+    alt: "Reverse osmosis water filtration system",
+    description:
+      "Have your water purifier checked when water taste or output changes, or when you have a concern about TDS.",
+    details: ["TDS check", "Water output review"],
   },
   {
-    title: "Quality Support",
-    icon: <BadgeCheck size={28} />,
-    desc: "Reliable after-sales service by certified technicians.",
+    title: "AMC plans",
+    category: "ANNUAL CARE",
+    icon: Droplets,
+    image: homeVisitPhoto,
+    alt: "Home water purifier service visit",
+    description:
+      "Ask about annual maintenance options for planned servicing and ongoing purifier care.",
+    details: ["Scheduled service options", "Ask us about coverage"],
   },
 ];
 
 function ServiceCards() {
   return (
-    <section className="py-15 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="ro-services" className="scroll-mt-24 bg-rse-surface py-14 sm:py-16">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="mx-auto mb-10 max-w-2xl text-center"
         >
-          <motion.span
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.4 }}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-sky-100 text-sky-700 font-semibold text-sm"
-          >
-            💧 Our Services
-          </motion.span>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.6 }}
-            className="mt-5 text-4xl md:text-5xl font-bold text-slate-900 leading-tight"
-          >
-            Reliable Water Treatment
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-              className="block text-sky-600"
-            >
-              Solutions for Every Need
-            </motion.span>
-          </motion.h2>
+          <span className="inline-flex items-center gap-2 rounded-full border border-rse-crimson/15 bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-rse-crimson shadow-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-rse-gold" /> Explore our services
+          </span>
+          <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-rse-text sm:text-4xl">
+            Find the right care for your <span className="text-rse-gold">RO purifier.</span>
+          </h2>
+          <p className="mt-4 leading-7 text-slate-600">
+            Each service is explained below. Choose a card to get in touch and discuss what your purifier needs.
+          </p>
         </motion.div>
 
-        {/* Cards */}
-        <div className="grid gap-6 mt-14 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-              }}
-              whileHover={{ y: -8 }}
-              className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:border-sky-500 hover:shadow-l"
-            >
-              {/* Top Accent Line */}
-              <div className="absolute left-0 top-0 h-1 w-0 bg-sky-600 transition-all duration-500 group-hover:w-full"></div>
-
-              {/* Icon */}
-              <motion.div
-                whileHover={{ rotate: -8, scale: 1.08 }}
-                transition={{ duration: 0.25 }}
-                className="flex h-14 w-14 items-center justify-center rounded-xl bg-sky-100 text-sky-600"
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {services.map(
+            ({ title, category, icon: Icon, image, alt, description, details }, index) => (
+              <motion.article
+                key={title}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ delay: (index % 3) * 0.07, duration: 0.45 }}
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md transition duration-300 hover:-translate-y-1 hover:border-rse-gold/60 hover:shadow-xl"
               >
-                {item.icon}
-              </motion.div>
-
-              {/* Title */}
-              <h3 className="mt-5 text-xl font-semibold text-slate-900 transition-colors duration-300 group-hover:text-sky-600">
-                {item.title}
-              </h3>
-
-              {/* Description */}
-              <p className="mt-3 leading-7 text-slate-600">{item.desc}</p>
-
-              {/* Learn More */}
-              <motion.div
-                initial={{ x: -10, opacity: 0 }}
-                whileHover={{ x: 0, opacity: 1 }}
-                className="mt-6 flex items-center gap-2 text-sm font-semibold text-sky-600"
-              >
-                Learn More →
-              </motion.div>
-            </motion.div>
-          ))}
+                <div className="relative overflow-hidden bg-rse-primary">
+                  <img
+                    src={image}
+                    alt={alt}
+                    loading="lazy"
+                    className="aspect-video w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-slate-950/30" />
+                  <span className="absolute left-4 top-4 rounded-full border border-white/30 bg-rse-text/75 px-3 py-1.5 text-xs font-bold tracking-wider text-white backdrop-blur-md">
+                    {category}
+                  </span>
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <div className="flex items-start gap-3">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-blue-100 bg-blue-50 text-rse-primary transition-colors group-hover:bg-rse-primary group-hover:text-rse-gold">
+                      <Icon size={21} />
+                    </span>
+                    <h3 className="pt-1 text-lg font-bold leading-snug text-rse-text">{title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-5 text-slate-600">{description}</p>
+                  <ul className="mt-4 space-y-2 border-t border-slate-100 pt-3">
+                    {details.map((detail) => (
+                      <li key={detail} className="flex items-center gap-2 text-sm text-slate-600">
+                        <Check size={15} className="shrink-0 text-rse-gold" />
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    to="/contact"
+                    className="mt-auto inline-flex items-center gap-2 pt-5 font-bold text-rse-crimson transition-all duration-200 hover:text-rse-primary group-hover:gap-3"
+                  >
+                    Ask about this service <ArrowRight size={17} />
+                  </Link>
+                </div>
+              </motion.article>
+            ),
+          )}
         </div>
       </div>
     </section>

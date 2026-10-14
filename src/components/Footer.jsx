@@ -1,112 +1,122 @@
-import React from "react";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn, MdAccessTime } from "react-icons/md";
+import { Link } from "react-router-dom";
+import logo from "../image/logo.jpeg";
 
 function Footer() {
   return (
-    <footer className="bg-slate-900 text-white pt-16 pb-6">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-        {/* Company */}
+    <footer className="bg-rse-primary text-white">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
         <div>
-          <h2 className="text-3xl font-bold text-sky-400">💧 AquaPrime</h2>
-
-          <h3 className="text-lg font-semibold mt-2">
-            RO Service Center Patna
-          </h3>
-
-          <p className="text-gray-400 mt-4 leading-7">
-            Patna's most trusted independent RO repair and water purifier
-            service center. Fast, affordable, and reliable doorstep service.
+          <Link
+            to="/"
+            className="inline-flex items-center gap-3"
+            aria-label="RSE RO Service Experts home"
+          >
+            <img
+              src={logo}
+              alt=""
+              className="h-14 w-14 rounded-xl object-contain"
+            />
+            <span className="flex flex-col leading-tight">
+              <span className="text-lg font-extrabold tracking-wider text-white">
+                RSE
+              </span>
+              <span className="mt-1 text-xs font-bold tracking-wider text-rse-gold">
+                RO SERVICE EXPERTS
+              </span>
+            </span>
+          </Link>
+          <h2 className="mt-4 text-lg font-semibold">
+            RO Service Center, Patna
+          </h2>
+          <p className="mt-3 max-w-sm text-sm leading-6 text-white/65">
+            Doorstep RO repair, installation and maintenance for homes and
+            workplaces across Patna.
           </p>
-
-          <div className="flex gap-4 mt-6">
+          <div className="mt-5 flex gap-3">
             <a
+              aria-label="Facebook"
               href="#"
-              className="w-10 h-10 rounded-full bg-sky-600 flex items-center justify-center hover:bg-sky-700"
+              className="rounded-full border border-white/15 p-2.5 text-white/75 hover:border-rse-gold hover:text-rse-gold"
             >
               <FaFacebookF />
             </a>
-
             <a
+              aria-label="Instagram"
               href="#"
-              className="w-10 h-10 rounded-full bg-pink-600 flex items-center justify-center hover:bg-pink-700"
+              className="rounded-full border border-white/15 p-2.5 text-white/75 hover:border-rse-gold hover:text-rse-gold"
             >
               <FaInstagram />
             </a>
-
             <a
-              href="#"
-              className="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center hover:bg-green-700"
+              aria-label="WhatsApp"
+              href="https://wa.me/917979076001"
+              className="rounded-full border border-white/15 p-2.5 text-white/75 hover:border-rse-gold hover:text-rse-gold"
             >
               <FaWhatsapp />
             </a>
           </div>
         </div>
-
-        {/* Quick Links */}
         <div>
-          <h3 className="text-xl font-semibold mb-5">Quick Links</h3>
-
-          <ul className="space-y-3 text-gray-400">
+          <h3 className="font-bold text-rse-gold">Explore</h3>
+          <ul className="mt-4 space-y-3 text-sm text-white/70">
             <li>
-              <a href="/">Home</a>
+              <Link to="/" className="hover:text-white">
+                Home
+              </Link>
             </li>
             <li>
-              <a href="/about">About Us</a>
+              <Link to="/about" className="hover:text-white">
+                About RSE
+              </Link>
             </li>
             <li>
-              <a href="/services">Services</a>
+              <Link to="/services" className="hover:text-white">
+                Services
+              </Link>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <Link to="/contact" className="hover:text-white">
+                Contact
+              </Link>
             </li>
           </ul>
         </div>
-
-        {/* Services */}
         <div>
-          <h3 className="text-xl font-semibold mb-5">Services</h3>
-
-          <ul className="space-y-3 text-gray-400">
-            <li>RO Repair</li>
-            <li>RO Installation</li>
-            <li>AMC Plans</li>
-            <li>Filter Replacement</li>
-            <li>Water Purifier Service</li>
+          <h3 className="font-bold text-rse-gold">Our services</h3>
+          <ul className="mt-4 space-y-3 text-sm text-white/70">
+            <li>RO repair & servicing</li>
+            <li>Installation & replacement</li>
+            <li>Filter changes</li>
+            <li>Annual maintenance</li>
           </ul>
         </div>
-
-        {/* Contact */}
         <div>
-          <h3 className="text-xl font-semibold mb-5">Contact Us</h3>
-
-          <div className="space-y-4 text-gray-400">
-            <div className="flex gap-3">
-              <MdPhone className="text-sky-400 text-xl" />
-              <span>9876543210</span>
-            </div>
-
-            <div className="flex gap-3">
-              <MdEmail className="text-sky-400 text-xl" />
-              <span>info@aquaprimeservices.com</span>
-            </div>
-
-            <div className="flex gap-3">
-              <MdLocationOn className="text-sky-400 text-xl" />
-              <span>Patna, Bihar, India</span>
-            </div>
-
-            <div className="flex gap-3">
-              <MdAccessTime className="text-sky-400 text-xl" />
-              <span>Mon – Sun : 8:00 AM – 8:00 PM</span>
-            </div>
-          </div>
+          <h3 className="font-bold text-rse-gold">Get in touch</h3>
+          <ul className="mt-4 space-y-4 text-sm text-white/70">
+            <li className="flex items-start gap-3">
+              <MdPhone className="mt-0.5 shrink-0 text-lg text-rse-gold" />
+              <a href="tel:+917979076001">+91 79790 76001</a>
+            </li>
+            <li className="flex items-start gap-3">
+              <MdEmail className="mt-0.5 shrink-0 text-lg text-rse-gold" />
+              <a href="mailto:inforserocarepatna.com">rserocarepatna.com</a>
+            </li>
+            <li className="flex items-start gap-3">
+              <MdLocationOn className="mt-0.5 shrink-0 text-lg text-rse-gold" />
+              Patna, Bihar, India
+            </li>
+            <li className="flex items-start gap-3">
+              <MdAccessTime className="mt-0.5 shrink-0 text-lg text-rse-gold" />
+              Mon–Sun · 8:00 AM–8:00 PM
+            </li>
+          </ul>
         </div>
       </div>
-
-      {/* Bottom */}
-      <div className="border-t border-slate-700 mt-12 pt-6 text-center text-gray-500">
-        © {new Date().getFullYear()} AquaPrime Services. All Rights Reserved.
+      <div className="border-t border-white/10 px-6 py-5 text-center text-xs text-white/50">
+        © {new Date().getFullYear()} RSE RO Service Experts. All rights
+        reserved.
       </div>
     </footer>
   );

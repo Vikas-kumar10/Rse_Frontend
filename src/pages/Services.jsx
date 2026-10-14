@@ -1,5 +1,3 @@
-import React from "react";
-
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
@@ -11,7 +9,7 @@ import ServiceCTA from "../components/ServicesDetails/ServiceCTA.jsx";
 
 function Services() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar />
 
       <main>
@@ -30,3 +28,5 @@ function Services() {
 }
 
 export default Services;
+
+

@@ -1,157 +1,87 @@
-import React from "react";
-import { CheckCircle, ShieldCheck, Droplets, Wrench } from "lucide-react";
+import { ArrowRight, Check, Droplets, Wrench, Settings } from "lucide-react";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
+import servicePhoto from "../../assets/images/repair.jpg";
 
-import aboutCompany from "../../assets/images/Ro_purify.jpg";
+const focusAreas = [
+  { icon: Wrench, text: "RO repair and troubleshooting" },
+  { icon: Settings, text: "Installation and replacement" },
+  { icon: Droplets, text: "Filter care and maintenance" },
+];
 
 function CompanyInfo() {
   return (
-    <section className="py-20 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.8,
-              ease: "easeOut",
-            }}
-          >
-            <motion.img
-              src={aboutCompany}
-              alt="About Company"
-              whileHover={{
-                scale: 1.03,
-              }}
-              transition={{ duration: 0.4 }}
-              className="rounded-3xl shadow-2xl w-full object-cover"
-            />
-          </motion.div>
-
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.8,
-              delay: 0.2,
-              ease: "easeOut",
-            }}
-          >
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-sky-600 font-semibold uppercase tracking-widest"
-            >
-              About Company
-            </motion.span>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="text-4xl font-bold text-slate-900 mt-3"
-            >
-              Trusted Water Treatment Experts
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="text-gray-600 mt-6 leading-8"
-            >
-              We provide advanced RO systems, industrial water treatment,
-              installation, maintenance, and annual service solutions for homes,
-              businesses, and industries. Our mission is to deliver clean, safe,
-              and sustainable water with reliable customer support.
-            </motion.p>
-
-            {/* Features */}
-
-            <div className="grid sm:grid-cols-2 gap-5 mt-8">
-              {[
-                {
-                  icon: <ShieldCheck className="text-sky-600" size={24} />,
-                  text: "Certified Engineers",
-                },
-                {
-                  icon: <Droplets className="text-sky-600" size={24} />,
-                  text: "Pure Water Solutions",
-                },
-                {
-                  icon: <Wrench className="text-sky-600" size={24} />,
-                  text: "Installation & Service",
-                },
-                {
-                  icon: <CheckCircle className="text-sky-600" size={24} />,
-                  text: "100% Customer Satisfaction",
-                },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{
-                    opacity: 0,
-                    x: index % 2 === 0 ? -40 : 40,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: 0.5 + index * 0.15,
-                    duration: 0.5,
-                  }}
-                  whileHover={{
-                    x: 8,
-                  }}
-                  className="flex items-center gap-3 bg-slate-50 rounded-xl p-4 cursor-pointer"
-                >
-                  <motion.div
-                    whileHover={{
-                      rotate: 15,
-                      scale: 1.2,
-                    }}
-                  >
-                    {item.icon}
-                  </motion.div>
-
-                  <span className="font-medium text-slate-700">
-                    {item.text}
-                  </span>
-                </motion.div>
-              ))}
+    <section className="overflow-hidden bg-white py-20 sm:py-24">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-10">
+        <motion.div
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
+          className="relative mx-auto w-full max-w-xl"
+        >
+          <div
+            aria-hidden="true"
+            className="absolute -left-4 -top-4 h-28 w-28 rounded-tl-3xl border-l-2 border-t-2 border-rse-gold"
+          />
+          <img
+            src={servicePhoto}
+            alt="Technician checking a water purifier system"
+            loading="lazy"
+            className="relative aspect-video w-full rounded-3xl object-cover shadow-xl shadow-rse-primary/10"
+          />
+          <div className="absolute -bottom-5 right-5 flex items-center gap-3 rounded-2xl bg-rse-primary px-5 py-4 text-white shadow-xl sm:right-8">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-rse-gold/15 text-rse-gold">
+              <Droplets size={21} />
+            </span>
+            <div>
+              <p className="text-sm font-bold">Water purifier care</p>
+              <p className="mt-0.5 text-xs text-white/60">
+                For home and workplace
+              </p>
             </div>
+          </div>
+        </motion.div>
 
-            {/* Button */}
-
-            <motion.button
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                delay: 1,
-              }}
-              whileHover={{
-                scale: 1.05,
-              }}
-              whileTap={{
-                scale: 0.96,
-              }}
-              className="mt-10 px-8 py-3 bg-sky-600 hover:bg-sky-700 text-white rounded-xl shadow-lg"
-            >
-              Learn More
-            </motion.button>
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55, delay: 0.08 }}
+        >
+          <span className="text-xs font-bold uppercase tracking-wider text-rse-crimson">
+            Who we are
+          </span>
+          <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-rse-text sm:text-4xl">
+            Local RO care, with a{" "}
+            <span className="text-rse-gold">personal touch.</span>
+          </h2>
+          <p className="mt-5 leading-7 text-slate-600">
+            RSE RO Service Experts supports customers in Patna with everyday
+            water purifier needs. From a repair visit to a new installation, we
+            aim to make it easy to understand what your system needs and how to
+            take care of it.
+          </p>
+          <div className="mt-7 space-y-3">
+            {focusAreas.map(({ icon: Icon, text }) => (
+              <div key={text} className="flex items-center gap-3">
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-rse-gold/20 text-rse-text">
+                  <Icon size={18} />
+                </span>
+                <span className="text-sm font-medium text-slate-700">
+                  {text}
+                </span>
+                <Check size={16} className="ml-auto text-rse-gold" />
+              </div>
+            ))}
+          </div>
+          <Link
+            to="/contact"
+            className="mt-8 inline-flex items-center gap-2 font-bold text-rse-crimson transition hover:gap-3"
+          >
+            Get in touch <ArrowRight size={17} />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

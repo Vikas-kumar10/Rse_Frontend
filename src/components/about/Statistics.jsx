@@ -36,19 +36,21 @@ function Statistics() {
   return (
     <section className="relative py-10 bg-slate-50 overflow-hidden">
       {/* Background Blur */}
-      <div className="absolute -top-20 -left-20 w-72 h-72 bg-sky-200/40 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-cyan-200/40 rounded-full blur-3xl"></div>
+      <div className="absolute -top-20 -left-20 w-72 h-72 bg-rse-gold/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-rse-crimson/10 rounded-full blur-3xl"></div>
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-sky-100 text-sky-700 font-semibold text-sm">
+          <span className="inline-block px-4 py-2 rounded-full bg-rse-gold/15 text-rse-text font-semibold text-sm">
             OUR ACHIEVEMENTS
           </span>
 
           <h2 className="mt-5 text-4xl md:text-5xl font-bold text-slate-900">
             Trusted Water Treatment
-            <span className="block text-sky-600">Experts You Can Rely On</span>
+            <span className="block text-rse-primary">
+              Experts You Can Rely On
+            </span>
           </h2>
 
           <p className="mt-6 text-lg text-slate-600 leading-8">
@@ -65,7 +67,7 @@ function Statistics() {
               key={index}
               className="group bg-white/80 backdrop-blur-lg rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
             >
-              <div className="w-16 h-16 rounded-2xl bg-blue from-sky-600 to-cyan-500 text-white flex items-center justify-center group-hover:rotate-6 transition">
+              <div className="w-16 h-16 rounded-2xl bg-rse-primary text-white flex items-center justify-center group-hover:rotate-6 transition">
                 {item.icon}
               </div>
 

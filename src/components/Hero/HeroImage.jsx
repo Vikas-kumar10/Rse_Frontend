@@ -1,11 +1,19 @@
-import heroImg from "../../image/aqua1.png";
+import heroImg from "../../assets/images/RSE.jpg";
 import HeroStats from "./HeroStats";
 
 function HeroImage() {
   return (
-    <div className="relative">
-      <div className="bg-white p-5 rounded-3xl shadow-2xl">
-        <img src={heroImg} alt="RO System" className="rounded-2xl w-full" />
+    <div className="relative mx-auto w-full max-w-xl">
+      <div
+        aria-hidden="true"
+        className="absolute -inset-3 rotate-3 rounded-3xl border border-rse-gold/50"
+      />
+      <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-white p-2 shadow-2xl shadow-black/30">
+        <img
+          src={heroImg}
+          alt="Reverse osmosis water purifier installed beneath a kitchen sink"
+          className="aspect-video w-full rounded-2xl object-cover"
+        />
       </div>
 
       <HeroStats />

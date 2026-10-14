@@ -1,129 +1,73 @@
-import React from "react";
-import { CheckCircle, ArrowRight } from "lucide-react";
-import { motion } from "motion/react";
-import serviceImg from "../../assets/images/repair.jpg";
+import { CheckCircle2, Droplets, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import purifierPhoto from "../../assets/images/Ro_purify.jpg";
+
+const symptoms = [
+  "Water flow has slowed",
+  "You notice a leak",
+  "Water taste or smell has changed",
+  "The purifier makes unusual noise",
+  "A filter may be due for replacement",
+  "You want a routine check-up",
+];
 
 function ServiceDetail() {
-  const problems = [
-    "Low Water Output",
-    "Water Leakage",
-    "Bad Taste & Odor",
-    "Filter Replacement",
-    "High TDS Issue",
-    "Motor Repair",
-  ];
-
   return (
-    <section className="py-10 bg-slate-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="overflow-hidden rounded-3xl shadow-xl"
-          >
-            <img
-              src={serviceImg}
-              alt="RO Service"
-              className="w-full h-96 object-cover transition duration-700 hover:scale-105"
-            />
-          </motion.div>
-
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-sky-600 font-semibold uppercase tracking-widest"
-            >
-              RO Repair Service
-            </motion.span>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="mt-3 text-4xl font-bold text-slate-900 leading-tight"
-            >
-              Professional RO Repair & Maintenance
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45 }}
-              className="mt-5 text-slate-600 leading-8"
-            >
-              
-            </motion.p>
-
-            {/* Problems */}
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              {problems.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: index * 0.1,
-                    duration: 0.4,
-                  }}
-                  whileHover={{ y: -4 }}
-                  className="group flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm border border-transparent hover:border-sky-200 hover:shadow-md transition-all"
-                >
-                  <motion.div
-                    whileHover={{ rotate: 12, scale: 1.15 }}
-                  >
-                    <CheckCircle
-                      size={20}
-                      className="text-green-500"
-                    />
-                  </motion.div>
-
-                  <span className="text-slate-700 font-medium">
-                    {item}
-                  </span>
-                </motion.div>
-              ))}
+    <section className="bg-white py-20 sm:py-24">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-10">
+        <div className="relative overflow-hidden rounded-3xl bg-rse-primary">
+          <img
+            src={purifierPhoto}
+            alt="Reverse osmosis purifier and filtration stages"
+            loading="lazy"
+            className="aspect-video w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-slate-950/30" />
+          <div className="absolute bottom-5 left-5 flex items-center gap-3 text-white sm:bottom-7 sm:left-7">
+            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-rse-gold text-rse-text">
+              <Droplets size={22} />
+            </span>
+            <div>
+              <p className="font-bold">Not sure which service?</p>
+              <p className="mt-0.5 text-sm text-white/75">
+                Tell us what you are noticing.
+              </p>
             </div>
-
-            {/* Button */}
-            <motion.button
-              whileHover={{
-                scale: 1.04,
-                x: 5,
-              }}
-              whileTap={{ scale: 0.96 }}
-              className="mt-10 flex items-center gap-2 rounded-full bg-sky-600 px-7 py-3 text-white shadow-lg transition hover:bg-sky-700"
-            >
-              Book Service
-              <motion.div
-                animate={{ x: [0, 4, 0] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 1.5,
-                }}
-              >
-                <ArrowRight size={18} />
-              </motion.div>
-            </motion.button>
-
-          </motion.div>
-
+          </div>
         </div>
-
+        <div>
+          <span className="text-xs font-bold uppercase tracking-wider text-rse-crimson">
+            Know when to book
+          </span>
+          <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-rse-text sm:text-4xl">
+            Noticing a change in your purifier?
+          </h2>
+          <p className="mt-4 leading-7 text-slate-600">
+            A change in flow, taste or sound can be a good reason to have your
+            RO system checked. Share what you have noticed and we can help you
+            choose the right service.
+          </p>
+          <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+            {symptoms.map((symptom) => (
+              <li
+                key={symptom}
+                className="flex items-start gap-2.5 text-sm leading-6 text-slate-700"
+              >
+                <CheckCircle2
+                  size={18}
+                  className="mt-0.5 shrink-0 text-rse-gold"
+                />
+                {symptom}
+              </li>
+            ))}
+          </ul>
+          <Link
+            to="/contact"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-rse-primary px-5 py-3 font-semibold text-white transition hover:bg-rse-crimson"
+          >
+            Talk to our team <ArrowRight size={17} />
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -30,7 +30,7 @@ function Team() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-14">
-          <p className="text-sky-600 font-semibold uppercase tracking-wider">
+          <p className="text-rse-primary font-semibold uppercase tracking-wider">
             Our Strength
           </p>
 
@@ -52,7 +52,7 @@ function Team() {
               key={index}
               className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300 text-center"
             >
-              <div className="w-20 h-20 mx-auto rounded-full bg-sky-100 text-sky-600 flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto rounded-full bg-rse-gold/15 text-rse-primary flex items-center justify-center">
                 {item.icon}
               </div>
 

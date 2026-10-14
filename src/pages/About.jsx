@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
@@ -6,9 +5,8 @@ import AboutHero from "../components/about/AboutHero.jsx";
 import CompanyInfo from "../components/about/CompanyInfo.jsx";
 import WhyChooseUs from "../components/about/WhyChooseUs.jsx";
 
-import Statistics from "../components/about/Statistics.jsx";
 import Process from "../components/about/Process.jsx";
-import Team from "../components/about/Team.jsx";
+import AboutCTA from "../components/about/AboutCTA.jsx";
 
 function About() {
   return (
@@ -22,11 +20,8 @@ function About() {
 
         <WhyChooseUs />
 
-        <Statistics />
-
         <Process />
-
-        <Team />
+        <AboutCTA />
       </main>
 
       <Footer />
