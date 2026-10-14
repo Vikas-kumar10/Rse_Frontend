@@ -111,6 +111,10 @@ function Footer() {
               <span>Ghurdaur Road No.-3, Patna-800011</span>
             </li>
             <li className="flex items-start gap-3">
+              <span className="shrink-0 font-semibold text-rse-gold">GSTIN</span>
+              <span>10DESPD3516K1ZM</span>
+            </li>
+            <li className="flex items-start gap-3">
               <MdAccessTime className="mt-0.5 shrink-0 text-lg text-rse-gold" />
               Mon–Sun · 8:00 AM–8:00 PM
             </li>

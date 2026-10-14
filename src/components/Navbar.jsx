@@ -30,18 +30,41 @@ function Navbar() {
         className="fixed inset-x-0 top-0 z-40 px-2.5 pt-2.5 sm:px-5 sm:pt-3"
       >
         <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between rounded-2xl border border-rse-gold/40 bg-rse-primary/95 px-3 shadow-xl shadow-rse-primary/20 backdrop-blur-md sm:h-[4.5rem] sm:px-5 lg:px-6">
-          <span aria-hidden="true" className="absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-rse-gold/70 to-transparent" />
-          <Link to="/" className="relative flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5" aria-label="RSE RO Service Experts home">
-            <img src={logo} alt="" className="h-10 w-10 rounded-lg object-contain sm:h-12 sm:w-12" />
+          <span
+            aria-hidden="true"
+            className="absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-rse-gold/70 to-transparent"
+          />
+          <Link
+            to="/"
+            className="relative flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5"
+            aria-label="RSE RO Service Experts home"
+          >
+            <img
+              src={logo}
+              alt=""
+              className="h-10 w-10 rounded-lg object-contain sm:h-12 sm:w-12"
+            />
             <span className="flex flex-col leading-tight">
-              <span className="text-base font-extrabold tracking-wider text-white sm:text-lg">RSE</span>
-              <span className="mt-1 whitespace-nowrap text-[0.625rem] font-bold tracking-wider text-rse-gold sm:text-xs">RO SERVICE EXPERTS</span>
+              <span className="text-base font-extrabold tracking-wider text-white sm:text-lg">
+                RSE
+              </span>
+              <span className="mt-1 whitespace-nowrap text-[0.625rem] font-bold tracking-wider text-rse-gold sm:text-xs">
+                Rajdhani Sony Enterprises
+              </span>
             </span>
           </Link>
 
-          <nav aria-label="Main navigation" className="hidden items-center gap-1 xl:flex">
+          <nav
+            aria-label="Main navigation"
+            className="hidden items-center gap-1 xl:flex"
+          >
             {navLinks.map((item) => (
-              <NavLink key={item.name} to={item.link} end={item.link === "/"} className={linkStyle}>
+              <NavLink
+                key={item.name}
+                to={item.link}
+                end={item.link === "/"}
+                className={linkStyle}
+              >
                 {item.name}
               </NavLink>
             ))}
@@ -50,11 +73,26 @@ function Navbar() {
           <div className="hidden items-center gap-2 xl:flex">
             <div className="flex items-center gap-1">
               <PhoneCall size={17} aria-hidden="true" />
-              <a href="tel:7631996850" className="rounded-full px-2 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/10 hover:text-rse-gold" aria-label="Call 7631996850">7631996850</a>
+              <a
+                href="tel:7631996850"
+                className="rounded-full px-2 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/10 hover:text-rse-gold"
+                aria-label="Call 7631996850"
+              >
+                7631996850
+              </a>
               <span className="text-white/50">/</span>
-              <a href="tel:7631996851" className="rounded-full px-2 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/10 hover:text-rse-gold" aria-label="Call 7631996851">7631996851</a>
+              <a
+                href="tel:7631996851"
+                className="rounded-full px-2 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/10 hover:text-rse-gold"
+                aria-label="Call 7631996851"
+              >
+                7631996851
+              </a>
             </div>
-            <Link to="/contact" className="rounded-full border border-rse-crimson bg-rse-crimson px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-rse-crimson/20 transition hover:border-rse-gold hover:bg-rse-gold hover:text-rse-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rse-gold">
+            <Link
+              to="/contact"
+              className="rounded-full border border-rse-crimson bg-rse-crimson px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-rse-crimson/20 transition hover:border-rse-gold hover:bg-rse-gold hover:text-rse-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rse-gold"
+            >
               Book a Service
             </Link>
           </div>
@@ -92,34 +130,70 @@ function Navbar() {
               onClick={(event) => event.stopPropagation()}
             >
               <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-5">
-                <Link to="/" onClick={() => setOpen(false)} aria-label="RSE RO Service Experts home" className="flex items-center gap-2.5">
-                  <img src={logo} alt="" className="h-12 w-12 rounded-lg object-contain" />
+                <Link
+                  to="/"
+                  onClick={() => setOpen(false)}
+                  aria-label="RSE RO Service Experts home"
+                  className="flex items-center gap-2.5"
+                >
+                  <img
+                    src={logo}
+                    alt=""
+                    className="h-12 w-12 rounded-lg object-contain"
+                  />
                   <span className="flex flex-col leading-tight">
-                    <span className="text-lg font-extrabold tracking-wider text-white">RSE</span>
-                    <span className="mt-1 text-xs font-bold tracking-wider text-rse-gold">RO SERVICE EXPERTS</span>
+                    <span className="text-lg font-extrabold tracking-wider text-white">
+                      RSE
+                    </span>
+                    <span className="mt-1 text-xs font-bold tracking-wider text-rse-gold">
+                      RO SERVICE EXPERTS
+                    </span>
                   </span>
                 </Link>
-                <button type="button" onClick={() => setOpen(false)} aria-label="Close navigation menu" className="rounded-lg p-2 text-white hover:bg-white/10 hover:text-rse-gold">
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  aria-label="Close navigation menu"
+                  className="rounded-lg p-2 text-white hover:bg-white/10 hover:text-rse-gold"
+                >
                   <X size={23} aria-hidden="true" />
                 </button>
               </div>
               <div className="flex flex-col gap-2">
                 {navLinks.map((item) => (
-                  <NavLink key={item.name} to={item.link} end={item.link === "/"} onClick={() => setOpen(false)} className={linkStyle}>
+                  <NavLink
+                    key={item.name}
+                    to={item.link}
+                    end={item.link === "/"}
+                    onClick={() => setOpen(false)}
+                    className={linkStyle}
+                  >
                     {item.name}
                   </NavLink>
                 ))}
               </div>
               <div className="mt-auto grid gap-3 border-t border-white/10 pt-5">
                 <div className="grid gap-2">
-                  <a href="tel:7631996850" className="flex items-center justify-center gap-2 rounded-xl border border-rse-gold/60 px-4 py-3 font-semibold text-white transition hover:bg-white/10 hover:text-rse-gold" aria-label="Call 7631996850">
+                  <a
+                    href="tel:7631996850"
+                    className="flex items-center justify-center gap-2 rounded-xl border border-rse-gold/60 px-4 py-3 font-semibold text-white transition hover:bg-white/10 hover:text-rse-gold"
+                    aria-label="Call 7631996850"
+                  >
                     <PhoneCall size={18} aria-hidden="true" /> 7631996850
                   </a>
-                  <a href="tel:7631996851" className="flex items-center justify-center gap-2 rounded-xl border border-rse-gold/60 px-4 py-3 font-semibold text-white transition hover:bg-white/10 hover:text-rse-gold" aria-label="Call 7631996851">
+                  <a
+                    href="tel:7631996851"
+                    className="flex items-center justify-center gap-2 rounded-xl border border-rse-gold/60 px-4 py-3 font-semibold text-white transition hover:bg-white/10 hover:text-rse-gold"
+                    aria-label="Call 7631996851"
+                  >
                     <PhoneCall size={18} aria-hidden="true" /> 7631996851
                   </a>
                 </div>
-                <Link to="/contact" onClick={() => setOpen(false)} className="rounded-xl bg-rse-crimson px-4 py-3 text-center font-bold text-white transition hover:bg-rse-gold hover:text-rse-text">
+                <Link
+                  to="/contact"
+                  onClick={() => setOpen(false)}
+                  className="rounded-xl bg-rse-crimson px-4 py-3 text-center font-bold text-white transition hover:bg-rse-gold hover:text-rse-text"
+                >
                   Book a Service
                 </Link>
               </div>
