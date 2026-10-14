@@ -1,6 +1,5 @@
-import { ArrowRight, Droplets, MapPin, PhoneCall } from "lucide-react";
+import { ArrowRight, Droplets, PhoneCall } from "lucide-react";
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
 import heroPhoto from "../../assets/images/maintanence.jpg";
 
 function ServiceHero() {

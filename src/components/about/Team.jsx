@@ -1,4 +1,3 @@
-import React from "react";
 import { UserRound, ShieldCheck, Award, Headset } from "lucide-react";
 
 function Team() {

@@ -1,4 +1,3 @@
-import React from "react";
 import { BriefcaseBusiness, Users, Award, Headset } from "lucide-react";
 
 function Statistics() {

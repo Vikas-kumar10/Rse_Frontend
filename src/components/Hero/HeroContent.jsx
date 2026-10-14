@@ -1,8 +1,7 @@
-﻿import {
+import {
   ArrowRight,
   Check,
   Droplets,
-  MapPin,
   PhoneCall,
   Wrench,
 } from "lucide-react";

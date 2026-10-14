@@ -1,4 +1,4 @@
-import { ArrowDown, MapPin, PhoneCall, MessageCircle } from "lucide-react";
+import { ArrowDown, PhoneCall, MessageCircle } from "lucide-react";
 import { motion } from "motion/react";
 import heroPhoto from "../../assets/images/Ro_purify.jpg";
 
