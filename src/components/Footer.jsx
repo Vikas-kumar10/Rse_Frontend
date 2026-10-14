@@ -97,7 +97,10 @@ function Footer() {
           <ul className="mt-4 space-y-4 text-sm text-white/70">
             <li className="flex items-start gap-3">
               <MdPhone className="mt-0.5 shrink-0 text-lg text-rse-gold" />
-              <a href="tel:+917979076001">+91 79790 76001</a>
+              <div className="flex flex-col gap-2">
+                <a href="tel:7631996850">7631996850</a>
+                <a href="tel:7631996851">7631996851</a>
+              </div>
             </li>
             <li className="flex items-start gap-3">
               <MdEmail className="mt-0.5 shrink-0 text-lg text-rse-gold" />
@@ -105,7 +108,7 @@ function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <MdLocationOn className="mt-0.5 shrink-0 text-lg text-rse-gold" />
-              Patna, Bihar, India
+              <span>Ghurdaur Road No.-3, Patna-800011</span>
             </li>
             <li className="flex items-start gap-3">
               <MdAccessTime className="mt-0.5 shrink-0 text-lg text-rse-gold" />

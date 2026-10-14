@@ -3,9 +3,10 @@ import { ArrowUpRight, CheckCircle2, ClipboardList, Mail, MapPin, MessageCircle,
 import { motion } from "motion/react";
 
 const contactItems = [
-  { icon: PhoneCall, label: "Call", value: "+91 79790 76001", href: "tel:+917979076001" },
+  { icon: PhoneCall, label: "Call", value: "7631996850", href: "tel:7631996850" },
+  { icon: PhoneCall, label: "Call (alternate)", value: "7631996851", href: "tel:7631996851" },
   { icon: Mail, label: "Email", value: "info@aquaprimeservices.com", href: "mailto:info@aquaprimeservices.com" },
-  { icon: MapPin, label: "Service area", value: "Patna, Bihar", href: "https://maps.google.com/?q=Patna,Bihar" },
+  { icon: MapPin, label: "Address", value: "Ghurdaur Road No.-3, Patna-800011", href: "https://maps.google.com/?q=Ghurdaur+Road+No.-3,+Patna-800011" },
 ];
 
 function ContactForm() {
@@ -21,7 +22,7 @@ function ContactForm() {
       `Service: ${formData.get("service")}`,
       `Details: ${formData.get("details") || "Not provided"}`,
     ].join("\n");
-    const whatsappUrl = `https://wa.me/917979076001?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/917631996850?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     setSent(true);
     event.currentTarget.reset();

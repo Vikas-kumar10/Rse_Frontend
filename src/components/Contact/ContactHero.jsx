@@ -34,13 +34,13 @@ function ContactHero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="tel:+917979076001"
+              href="tel:7631996850"
               className="inline-flex items-center gap-2 rounded-xl bg-rse-gold px-5 py-3.5 font-bold text-rse-text transition hover:-translate-y-0.5 hover:bg-white"
             >
-              <PhoneCall size={18} /> Call +91 79790 76001
+              <PhoneCall size={18} /> Call 7631996850
             </a>
             <a
-              href="https://wa.me/917979076001"
+              href="https://wa.me/917631996850"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-xl border border-white/25 px-5 py-3.5 font-semibold text-white transition hover:border-rse-gold hover:bg-white/5"

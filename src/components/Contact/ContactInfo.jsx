@@ -4,9 +4,9 @@ const info = [
   {
     icon: Phone,
     title: "Call RSE",
-    value: "+91 79790 76001",
+    value: "7631996850 / 7631996851",
     detail: "Speak with our service team",
-    href: "tel:+917979076001",
+    href: "tel:7631996850",
   },
   {
     icon: Mail,
@@ -18,9 +18,9 @@ const info = [
   {
     icon: MapPin,
     title: "Service location",
-    value: "Patna, Bihar",
+    value: "Ghurdaur Road No.-3, Patna-800011",
     detail: "Home and workplace visits",
-    href: "https://maps.google.com/?q=Patna,Bihar",
+    href: "https://maps.google.com/?q=Ghurdaur+Road+No.-3,+Patna-800011",
     external: true,
   },
   {

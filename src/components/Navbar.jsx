@@ -48,11 +48,12 @@ function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-2 xl:flex">
-            <a href="tel:+917979076001" className="flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/10 hover:text-rse-gold" aria-label="Call +91 79790 76001">
+            <div className="flex items-center gap-1">
               <PhoneCall size={17} aria-hidden="true" />
-              <span className="hidden xl:inline">+91 79790 76001</span>
-              <span className="xl:hidden">Call</span>
-            </a>
+              <a href="tel:7631996850" className="rounded-full px-2 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/10 hover:text-rse-gold" aria-label="Call 7631996850">7631996850</a>
+              <span className="text-white/50">/</span>
+              <a href="tel:7631996851" className="rounded-full px-2 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/10 hover:text-rse-gold" aria-label="Call 7631996851">7631996851</a>
+            </div>
             <Link to="/contact" className="rounded-full border border-rse-crimson bg-rse-crimson px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-rse-crimson/20 transition hover:border-rse-gold hover:bg-rse-gold hover:text-rse-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rse-gold">
               Book a Service
             </Link>
@@ -110,9 +111,14 @@ function Navbar() {
                 ))}
               </div>
               <div className="mt-auto grid gap-3 border-t border-white/10 pt-5">
-                <a href="tel:+917979076001" className="flex items-center justify-center gap-2 rounded-xl border border-rse-gold/60 px-4 py-3 font-semibold text-white transition hover:bg-white/10 hover:text-rse-gold">
-                  <PhoneCall size={18} aria-hidden="true" /> Call +91 79790 76001
-                </a>
+                <div className="grid gap-2">
+                  <a href="tel:7631996850" className="flex items-center justify-center gap-2 rounded-xl border border-rse-gold/60 px-4 py-3 font-semibold text-white transition hover:bg-white/10 hover:text-rse-gold" aria-label="Call 7631996850">
+                    <PhoneCall size={18} aria-hidden="true" /> 7631996850
+                  </a>
+                  <a href="tel:7631996851" className="flex items-center justify-center gap-2 rounded-xl border border-rse-gold/60 px-4 py-3 font-semibold text-white transition hover:bg-white/10 hover:text-rse-gold" aria-label="Call 7631996851">
+                    <PhoneCall size={18} aria-hidden="true" /> 7631996851
+                  </a>
+                </div>
                 <Link to="/contact" onClick={() => setOpen(false)} className="rounded-xl bg-rse-crimson px-4 py-3 text-center font-bold text-white transition hover:bg-rse-gold hover:text-rse-text">
                   Book a Service
                 </Link>
