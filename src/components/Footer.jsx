@@ -37,14 +37,14 @@ function Footer() {
           <div className="mt-5 flex gap-3">
             <a
               aria-label="Facebook"
-              href="#"
+              href="https://www.facebook.com/share/1LzqohkwcL/?mibextid=wwXIfr"
               className="rounded-full border border-white/15 p-2.5 text-white/75 hover:border-rse-gold hover:text-rse-gold"
             >
               <FaFacebookF />
             </a>
             <a
               aria-label="Instagram"
-              href="#"
+              href="https://instagram.com/rajdhanisony_enterprises?mdxt=Z2hwbXQ1MDBxNDBp"
               className="rounded-full border border-white/15 p-2.5 text-white/75 hover:border-rse-gold hover:text-rse-gold"
             >
               <FaInstagram />
