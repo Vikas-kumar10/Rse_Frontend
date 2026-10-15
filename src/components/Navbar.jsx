@@ -75,19 +75,15 @@ function Navbar() {
               <PhoneCall size={17} aria-hidden="true" />
               <a
                 href="tel:7631996850"
-                className="rounded-full px-2 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/10 hover:text-rse-gold"
+                className="rounded-full px-2 py-2 text-sm font-semibold text-white/90 transition hover:bg-red/10 hover:text-rse-gold"
                 aria-label="Call 7631996850"
               >
                 7631996850
               </a>
-              <span className="text-white/50">/</span>
-              <a
-                href="tel:7631996851"
-                className="rounded-full px-2 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/10 hover:text-rse-gold"
-                aria-label="Call 7631996851"
-              >
-                7631996851
-              </a>
+              <span className="text-white/50">|</span>
+              <span className="cursor-default rounded-full px-2 py-2 text-xs font-semibold text-white/90 transition-colors duration-200 hover:bg-white/10 hover:text-rse-gold" aria-label="GSTIN 10DESPD3516K1ZM">
+                GSTIN: 10DESPD3516K1ZM
+              </span>
             </div>
             <Link
               to="/contact"
@@ -172,22 +168,18 @@ function Navbar() {
                   </NavLink>
                 ))}
               </div>
-              <div className="mt-auto grid gap-3 border-t border-white/10 pt-5">
+              <div className="mt-auto grid gap-3 border-t border-white pt-5">
                 <div className="grid gap-2">
                   <a
                     href="tel:7631996850"
                     className="flex items-center justify-center gap-2 rounded-xl border border-rse-gold/60 px-4 py-3 font-semibold text-white transition hover:bg-white/10 hover:text-rse-gold"
                     aria-label="Call 7631996850"
                   >
-                    <PhoneCall size={18} aria-hidden="true" /> 7631996850
+                    <PhoneCall size={18} className="text-white" aria-hidden="true" /> 7631996850
                   </a>
-                  <a
-                    href="tel:7631996851"
-                    className="flex items-center justify-center gap-2 rounded-xl border border-rse-gold/60 px-4 py-3 font-semibold text-white transition hover:bg-white/10 hover:text-rse-gold"
-                    aria-label="Call 7631996851"
-                  >
-                    <PhoneCall size={18} aria-hidden="true" /> 7631996851
-                  </a>
+                  <div className="cursor-default rounded-xl border border-rse-gold/60 px-4 py-3 text-center text-sm font-semibold text-white transition-colors duration-200 hover:border-rse-gold hover:bg-rse-gold/10 hover:text-rse-gold" aria-label="GSTIN 10DESPD3516K1ZM">
+                    GSTIN: 10DESPD3516K1ZM
+                  </div>
                 </div>
                 <Link
                   to="/contact"

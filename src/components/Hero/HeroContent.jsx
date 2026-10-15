@@ -16,13 +16,13 @@ const services = [
 
 function HeroContent() {
   return (
-    <div className="relative z-10 max-w-2xl">
+    <div className="relative z-10 -mt-8 max-w-2xl sm:-mt-4">
       
       <motion.h1
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.55 }}
-        className="mt-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+        className="mt-0 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
       >
         Authorised service centre with{" "}
         <span className="relative inline-block text-rse-gold">
@@ -38,7 +38,7 @@ function HeroContent() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.55 }}
-        className="mt-6 max-w-xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8"
+        className="mt-6 max-w-xl text-base leading-7 text-white/95 sm:text-lg sm:leading-8"
       >
         From RO repairs and filter changes to new installations and AMC, RSE
         helps keep your home or workplace purifier in good shape.
@@ -70,7 +70,7 @@ function HeroContent() {
         </a>
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.45, duration: 0.5 }}
@@ -86,7 +86,7 @@ function HeroContent() {
               initial={{ opacity: 0, x: -8 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 + index * 0.08, duration: 0.35 }}
-              className="flex items-center gap-2.5 text-sm font-medium text-white/80"
+              className="flex items-center gap-2.5 text-sm font-semibold text-white"
             >
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-rse-gold/20 text-rse-gold">
                 {index === 0 ? (
@@ -101,7 +101,7 @@ function HeroContent() {
             </motion.li>
           ))}
         </ul>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }
