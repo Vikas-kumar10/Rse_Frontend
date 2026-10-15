@@ -54,6 +54,7 @@ function Footer() {
             <a
               aria-label="WhatsApp"
               href="https://wa.me/917979076001"
+              target="_blank"
               className="rounded-full border border-white/15 p-2.5 text-white/75 hover:border-rse-gold hover:text-rse-gold"
             >
               <FaWhatsapp />
