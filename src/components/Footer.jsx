@@ -38,6 +38,7 @@ function Footer() {
             <a
               aria-label="Facebook"
               href="https://www.facebook.com/share/1LzqohkwcL/?mibextid=wwXIfr"
+              target="_blank"
               className="rounded-full border border-white/15 p-2.5 text-white/75 hover:border-rse-gold hover:text-rse-gold"
             >
               <FaFacebookF />
@@ -45,6 +46,7 @@ function Footer() {
             <a
               aria-label="Instagram"
               href="https://instagram.com/rajdhanisony_enterprises?mdxt=Z2hwbXQ1MDBxNDBp"
+                target="_blank"
               className="rounded-full border border-white/15 p-2.5 text-white/75 hover:border-rse-gold hover:text-rse-gold"
             >
               <FaInstagram />
