@@ -12,7 +12,11 @@ import {
 import { Link } from "react-router-dom";
 import repairPhoto from "../../assets/images/repair.jpg";
 import homeVisitPhoto from "../../assets/images/maintanence.jpg";
-import purifierPhoto from "../../assets/images/Ro_purify.jpg";
+import purifierPhoto from "../../assets/images/Ro Install.png";
+import waterquality from "../../assets/images/Water quality.png"
+import RoMentainance from "../../assets/images/RO maintenance.png"
+import FilterRepacement from "../../assets/images/Filter replacement.png"
+
 
 const services = [
   {
@@ -39,7 +43,7 @@ const services = [
     title: "Filter replacement",
     category: "FILTER CARE",
     icon: Filter,
-    image: repairPhoto,
+    image: FilterRepacement,
     alt: "Water purifier components being serviced",
     description:
       "Replace purifier filters when required and get guidance on keeping up with routine filter care.",
@@ -49,7 +53,7 @@ const services = [
     title: "RO maintenance",
     category: "REGULAR CARE",
     icon: ShieldCheck,
-    image: homeVisitPhoto,
+    image: RoMentainance,
     alt: "Technician discussing water purifier maintenance with a customer",
     description:
       "Keep your purifier in good working order with periodic inspection and maintenance support.",
@@ -59,7 +63,7 @@ const services = [
     title: "Water quality & TDS check",
     category: "WATER CHECK",
     icon: Gauge,
-    image: purifierPhoto,
+    image: waterquality,
     alt: "Reverse osmosis water filtration system",
     description:
       "Have your water purifier checked when water taste or output changes, or when you have a concern about TDS.",

@@ -6,7 +6,7 @@ import repairBanner from "../image/Purify.png";
 import maintenanceBanner from "../image/RSE1 (2).png";
 import purifierBanner from "../image/RSE1.png";
 import aquaTrustBanner from "../image/Rse2.JPG";
-import aquaServiceBanner from "../image/aqua1.png";
+import aquaServiceBanner from "../image/RSE1 (2).png";
 
 const services = [
   {
