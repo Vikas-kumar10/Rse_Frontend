@@ -1,6 +1,7 @@
 import { ArrowRight, ClipboardList, PhoneCall, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
-import servicePhoto from "../assets/images/repair.jpg";
+// import servicePhoto from "../assets/images/repair.jpg";
+import servicePhoto from "../assets/images/Ro Install.png";
 
 const steps = [
   {
@@ -39,14 +40,14 @@ function ServiceProcess() {
               loading="lazy"
               className="relative aspect-video w-full rounded-3xl object-cover shadow-2xl shadow-rse-primary/15"
             />
-            <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/50 bg-white/95 p-4 shadow-xl backdrop-blur sm:bottom-7 sm:left-7 sm:right-auto sm:max-w-xs sm:p-5">
+            {/* <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/50 bg-white/95 p-4 shadow-xl backdrop-blur sm:bottom-7 sm:left-7 sm:right-auto sm:max-w-xs sm:p-5">
               <p className="text-xs font-bold uppercase tracking-wider text-rse-gold">
                 RO care in Patna
               </p>
               <p className="mt-1 font-semibold text-rse-text">
                 Repair · Installation · Maintenance
               </p>
-            </div>
+            </div> */}
           </div>
 
           <div>
