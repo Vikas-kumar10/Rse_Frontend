@@ -24,7 +24,7 @@ function HeroContent() {
         transition={{ delay: 0.1, duration: 0.55 }}
         className="mt-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
       >
-        Clean water starts with{" "}
+        Authorised service centre with{" "}
         <span className="relative inline-block text-rse-gold">
           expert RO care.
           <span
