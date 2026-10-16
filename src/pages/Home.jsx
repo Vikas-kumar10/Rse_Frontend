@@ -31,7 +31,7 @@ function Home() {
           <PhoneCall size={25} aria-hidden="true" />
         </a>
         <a
-          href="https://wa.me/917979076001"
+          href="https://wa.me/7631996850"
           target="_blank"
           rel="noreferrer"
           aria-label="Chat with RSE on WhatsApp"
