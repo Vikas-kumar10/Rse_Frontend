@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
 import ServiceHero from "../components/ServicesDetails/ServiceHero.jsx";
+import ServicePricing from "../components/ServicesDetails/ServicePricing.jsx";
 import ServiceCards from "../components/ServicesDetails/ServiceCards.jsx";
 import ServiceDetail from "../components/ServicesDetails/ServiceDetail.jsx";
 
@@ -16,6 +17,7 @@ function Services() {
         <ServiceHero />
 
         <ServiceCards />
+        <ServicePricing />
 
         <ServiceDetail />
 
@@ -28,5 +30,3 @@ function Services() {
 }
 
 export default Services;
-
-

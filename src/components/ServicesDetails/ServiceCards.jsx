@@ -97,9 +97,9 @@ function ServiceCards() {
           <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-rse-text sm:text-4xl">
             Find the right care for your <span className="text-rse-gold">RO purifier.</span>
           </h2>
-          <p className="mt-4 leading-7 text-slate-600">
+          {/* <p className="mt-4 leading-7 text-slate-600">
             Each service is explained below. Choose a card to get in touch and discuss what your purifier needs.
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
