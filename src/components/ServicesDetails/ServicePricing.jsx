@@ -10,6 +10,13 @@ const plans = [
     icon: Clock3,
   },
   {
+    name: "On Service",
+    price: "299",
+    description: "Get service support for your water purifier.",
+    detail: "Service charge for purifier support.",
+    icon: Wrench,
+  },
+  {
     name: "Filter Cleaning",
     price: "299",
     description: "Get your purifier filters cleaned as part of routine care.",
