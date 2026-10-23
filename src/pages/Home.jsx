@@ -9,14 +9,18 @@ import Faq from "../components/Faq";
 import Footer from "../components/Footer.jsx";
 import { FaWhatsapp } from "react-icons/fa";
 import { PhoneCall } from "lucide-react";
+import OfferBadge from "../components/OfferBadge.jsx";
+import ServicePricing from "../components/ServicesDetails/ServicePricing.jsx";
 
 function Home() {
   return (
     <>
       <Navbar />
       <Hero />
+      {/* <OfferBadge /> */}
       <ROServiceGallery />
       <ServiceCards />
+      <ServicePricing />
       <Services />
       <ServiceProcess />
       <HappyClients />

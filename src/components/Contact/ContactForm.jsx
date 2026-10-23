@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 const contactItems = [
   { icon: PhoneCall, label: "Call", value: "7631996850", href: "tel:7631996850" },
   { icon: PhoneCall, label: "Call (alternate)", value: "7631996851", href: "tel:7631996851" },
-  { icon: Mail, label: "Email", value: "info@aquaprimeservices.com", href: "mailto:info@aquaprimeservices.com" },
+  { icon: Mail, label: "Email", value: "rajdhanisonyenterprises@gmail.com", href: "mailto:rajdhanisonyenterprises@gmail.com" },
   { icon: MapPin, label: "Address", value: "Ghurdaur Road No.-3, Patna-800011", href: "https://maps.google.com/?q=Ghurdaur+Road+No.-3,+Patna-800011" },
 ];
 

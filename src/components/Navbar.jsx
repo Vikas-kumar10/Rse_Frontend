@@ -18,7 +18,7 @@ const linkStyle = ({ isActive }) =>
       : "text-white/85 hover:bg-white/10 hover:text-rse-gold"
   }`;
 
-function Navbar() {
+function Navbar({ topOffset = false }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -27,7 +27,7 @@ function Navbar() {
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.35 }}
-        className="fixed inset-x-0 top-0 z-40 px-2.5 pt-2.5 sm:px-5 sm:pt-3"
+        className={`fixed inset-x-0 z-40 px-2.5 pt-2.5 sm:px-5 sm:pt-3 ${topOffset ? "top-10" : "top-0"}`}
       >
         <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between rounded-2xl border border-rse-gold/40 bg-rse-primary/95 px-3 shadow-xl shadow-rse-primary/20 backdrop-blur-md sm:h-[4.5rem] sm:px-5 lg:px-6">
           <span
@@ -36,15 +36,15 @@ function Navbar() {
           />
           <Link
             to="/"
-            className="relative flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5"
+            className="relative flex min-w-0 shrink-0 items-center gap-1 sm:gap-2.5"
             aria-label="RSE RO Service Experts home"
           >
             <img
               src={logo}
               alt=""
-              className="h-10 w-10 rounded-lg object-contain sm:h-12 sm:w-12"
+              className="h-8 w-8 rounded-lg object-contain sm:h-12 sm:w-12"
             />
-            <span className="flex flex-col leading-tight">
+            <span className="hidden flex-col leading-tight sm:flex">
               <span className="text-base font-extrabold tracking-wider text-white sm:text-lg">
                 RSE
               </span>
@@ -55,11 +55,10 @@ function Navbar() {
           </Link>
 
           <div
-            className="min-w-0 px-1 text-center text-[0.625rem] font-semibold leading-tight text-white/90 sm:px-2 sm:text-xs xl:hidden"
+            className="absolute right-12 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-full border border-rse-gold/60 bg-rse-gold/15 px-2 py-1 text-[0.625rem] font-semibold leading-none text-white shadow-[0_0_10px_rgba(245,190,70,0.18)] sm:right-14 sm:text-xs xl:hidden"
             aria-label="GSTIN 10DESPD3516K1ZM"
           >
-            <span className="block text-[0.55rem] text-white/60 sm:text-[0.625rem]">GSTIN</span>
-            <span className="block break-all">10DESPD3516K1ZM</span>
+            <span className="text-rse-gold">GSTIN:</span> 10DESPD3516K1ZM
           </div>
 
           <nav

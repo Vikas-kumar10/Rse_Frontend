@@ -11,9 +11,9 @@ const info = [
   {
     icon: Mail,
     title: "Email us",
-    value: "info@aquaprimeservices.com",
+    value: "rajdhanisonyenterprises@gmail.com",
     detail: "Send us your service question",
-    href: "mailto:info@aquaprimeservices.com",
+    href: "mailto:rajdhanisonyenterprises@gmail.com",
   },
   {
     icon: MapPin,

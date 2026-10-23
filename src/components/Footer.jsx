@@ -107,9 +107,9 @@ function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <MdEmail className="mt-0.5 shrink-0 text-lg text-rse-gold" />
-              <a href="rajdhanisonyenterprises@gmail.com"
-               target="_blank"
-              >rserocarepatna.com</a>
+              <a href="mailto:rajdhanisonyenterprises@gmail.com">
+                rajdhanisonyenterprises@gmail.com
+              </a>
             </li>
             <li className="flex items-start gap-3">
               <MdLocationOn className="mt-0.5 shrink-0 text-lg text-rse-gold" />
