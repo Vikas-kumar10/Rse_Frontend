@@ -44,11 +44,11 @@ function Navbar({ topOffset = false }) {
               alt=""
               className="h-8 w-8 rounded-lg object-contain sm:h-12 sm:w-12"
             />
-            <span className="hidden flex-col leading-tight sm:flex">
-              <span className="text-base font-extrabold tracking-wider text-white sm:text-lg">
+            <span className="flex max-w-[4.25rem] flex-col leading-tight sm:max-w-none">
+              <span className="text-xs font-extrabold tracking-wider text-white sm:text-lg">
                 RSE
               </span>
-              <span className="mt-1 whitespace-nowrap text-[0.625rem] font-bold tracking-wider text-rse-gold sm:text-xs">
+              <span className="mt-0.5 text-[0.5rem] font-bold leading-tight tracking-normal text-rse-gold sm:mt-1 sm:whitespace-nowrap sm:text-xs sm:tracking-wider">
                 Rajdhani Sony Enterprises
               </span>
             </span>
