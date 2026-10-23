@@ -24,9 +24,9 @@ function HeroContent() {
         transition={{ delay: 0.1, duration: 0.55 }}
         className="mt-0 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
       >
-        Authorised service centre with{" "}
-        <span className="relative inline-block text-rse-gold">
-          expert RO care.
+        Authorised Ro service centre with{" "}
+        <span className="relative inline-block whitespace-nowrap text-rse-gold">
+          expert RO Technician.
           <span
             aria-hidden="true"
             className="absolute -bottom-1 left-0 h-1 w-2/3 rounded-full bg-rse-gold"
@@ -66,7 +66,7 @@ function HeroContent() {
           className="inline-flex min-h-13 items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/5 px-6 py-3.5 font-bold text-white transition hover:border-rse-gold hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rse-gold"
         >
           <PhoneCall size={18} aria-hidden="true" />
-          Call +91 79790 76001
+          Call +91 7631996851
         </a>
       </motion.div>
 
