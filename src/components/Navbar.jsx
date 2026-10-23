@@ -54,6 +54,14 @@ function Navbar() {
             </span>
           </Link>
 
+          <div
+            className="min-w-0 px-1 text-center text-[0.625rem] font-semibold leading-tight text-white/90 sm:px-2 sm:text-xs xl:hidden"
+            aria-label="GSTIN 10DESPD3516K1ZM"
+          >
+            <span className="block text-[0.55rem] text-white/60 sm:text-[0.625rem]">GSTIN</span>
+            <span className="block break-all">10DESPD3516K1ZM</span>
+          </div>
+
           <nav
             aria-label="Main navigation"
             className="hidden items-center gap-1 xl:flex"
