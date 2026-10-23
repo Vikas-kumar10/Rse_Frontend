@@ -16,16 +16,16 @@ const services = [
 
 function HeroContent() {
   return (
-    <div className="relative z-10 -mt-8 max-w-2xl sm:-mt-4">
+    <div className="relative z-10 max-w-2xl">
       
       <motion.h1
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.55 }}
-        className="mt-0 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+        className="mt-0 text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-6xl"
       >
         Authorised Ro service centre with{" "}
-        <span className="relative inline-block whitespace-nowrap text-rse-gold">
+        <span className="relative inline-block max-w-full whitespace-normal text-rse-gold sm:whitespace-nowrap">
           expert RO Technician.
           <span
             aria-hidden="true"
@@ -38,7 +38,7 @@ function HeroContent() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.55 }}
-        className="mt-6 max-w-xl text-base leading-7 text-white/95 sm:text-lg sm:leading-8"
+        className="mt-5 max-w-xl text-base leading-7 text-white/95 sm:mt-6 sm:text-lg sm:leading-8"
       >
         From RO repairs and filter changes to new installations and AMC, RSE
         helps keep your home or workplace purifier in good shape.
@@ -48,11 +48,11 @@ function HeroContent() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
-        className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+        className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap"
       >
         <Link
           to="/contact"
-          className="group inline-flex min-h-13 items-center justify-center gap-2 rounded-xl bg-rse-gold px-6 py-3.5 font-bold text-rse-text shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rse-gold"
+          className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-rse-gold px-4 py-3 font-bold text-rse-text shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rse-gold sm:min-h-13 sm:w-auto sm:px-6 sm:py-3.5"
         >
           Book an RO Service
           <ArrowRight
@@ -63,7 +63,7 @@ function HeroContent() {
         </Link>
         <a
           href="tel:+917979076001"
-          className="inline-flex min-h-13 items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/5 px-6 py-3.5 font-bold text-white transition hover:border-rse-gold hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rse-gold"
+          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/5 px-4 py-3 font-bold text-white transition hover:border-rse-gold hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rse-gold sm:min-h-13 sm:w-auto sm:px-6 sm:py-3.5"
         >
           <PhoneCall size={18} aria-hidden="true" />
           Call +91 7631996851

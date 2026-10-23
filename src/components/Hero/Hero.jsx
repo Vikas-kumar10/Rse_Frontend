@@ -27,7 +27,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-rse-primary pb-20 pt-32 text-white sm:pt-36 lg:pb-24">
+    <section className="relative overflow-hidden bg-rse-primary pb-14 pt-28 text-white sm:pb-20 sm:pt-36 lg:pb-24">
       <div aria-hidden="true" className="absolute inset-0 z-0">
         {backgroundImages.map((image, index) => (
           <div
@@ -49,8 +49,8 @@ function Hero() {
         aria-hidden="true"
         className="absolute -right-20 -top-20 h-96 w-96 rounded-full border border-rse-gold/10"
       />
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <HeroContent />
           {/* <HeroImage /> */}
         </div>
