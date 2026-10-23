@@ -89,7 +89,7 @@ function ROServiceGallery() {
   return (
     <section
       aria-labelledby="featured-services-title"
-      className="bg-rse-surface py-16 sm:py-20"
+      className="bg-rse-surface py-16 sm:py-16"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
         <div className="mb-8 flex flex-col gap-4 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">

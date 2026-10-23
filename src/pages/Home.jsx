@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero/Hero";
+import BrandingMarquee from "../components/BrandingMarquee";
 import ROServiceGallery from "../components/ROServiceGallery";
 import ServiceCards from "../components/ServicesDetails/ServiceCards";
 import Services from "../components/Services";
@@ -9,7 +10,7 @@ import Faq from "../components/Faq";
 import Footer from "../components/Footer.jsx";
 import { FaWhatsapp } from "react-icons/fa";
 import { PhoneCall } from "lucide-react";
-import OfferBadge from "../components/OfferBadge.jsx";
+
 import ServicePricing from "../components/ServicesDetails/ServicePricing.jsx";
 
 function Home() {
@@ -17,8 +18,9 @@ function Home() {
     <>
       <Navbar />
       <Hero />
-      {/* <OfferBadge /> */}
+
       <ROServiceGallery />
+      <BrandingMarquee />
       <ServiceCards />
       <ServicePricing />
       <Services />
