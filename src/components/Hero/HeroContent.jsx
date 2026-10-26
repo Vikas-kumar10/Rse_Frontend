@@ -62,7 +62,7 @@ function HeroContent() {
           />
         </Link>
         <a
-          href="tel:+917979076001"
+          href="tel:+917631996851"
           className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/5 px-4 py-3 font-bold text-white transition hover:border-rse-gold hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rse-gold sm:min-h-13 sm:w-auto sm:px-6 sm:py-3.5"
         >
           <PhoneCall size={18} aria-hidden="true" />

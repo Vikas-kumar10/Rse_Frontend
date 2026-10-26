@@ -28,6 +28,8 @@ function Home() {
       <HappyClients />
       <Faq />
       <Footer />
+
+      
       <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3 sm:bottom-7 sm:right-7">
         <a
           href="tel:7631996850"
