@@ -53,7 +53,7 @@ function Footer() {
             </a>
             <a
               aria-label="WhatsApp"
-              href="https://wa.me/917979076001"
+              href="https://wa.me/7631996850"
               target="_blank"
               className="rounded-full border border-white/15 p-2.5 text-white/75 hover:border-rse-gold hover:text-rse-gold"
             >
