@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Link, NavLink } from "react-router-dom";
 import { Menu, PhoneCall, X } from "lucide-react";
 import logo from "../image/logo.jpeg";
 
@@ -11,12 +10,8 @@ const navLinks = [
   { name: "Contact", link: "/contact" },
 ];
 
-const linkStyle = ({ isActive }) =>
-  `rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
-    isActive
-      ? "bg-rse-gold text-rse-text"
-      : "text-white/85 hover:bg-white/10 hover:text-rse-gold"
-  }`;
+const linkStyle =
+  "rounded-full px-3 py-2 text-sm font-semibold text-white/85 transition-colors hover:bg-white/10 hover:text-rse-gold";
 
 function Navbar({ topOffset = false }) {
   const [open, setOpen] = useState(false);
@@ -34,8 +29,8 @@ function Navbar({ topOffset = false }) {
             aria-hidden="true"
             className="absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-rse-gold/70 to-transparent"
           />
-          <Link
-            to="/"
+          <a
+            href="/"
             className="relative flex min-w-0 shrink-0 items-center gap-1 sm:gap-2.5"
             aria-label="RSE RO Service Experts home"
           >
@@ -52,7 +47,7 @@ function Navbar({ topOffset = false }) {
                 Rajdhani Sony Enterprises
               </span>
             </span>
-          </Link>
+          </a>
 
           <div
             className="absolute right-12 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-full border border-rse-gold/60 bg-rse-gold/15 px-2 py-1 text-[0.625rem] font-semibold leading-none text-white shadow-[0_0_10px_rgba(245,190,70,0.18)] sm:right-14 sm:text-xs xl:hidden"
@@ -66,14 +61,13 @@ function Navbar({ topOffset = false }) {
             className="hidden items-center gap-1 xl:flex"
           >
             {navLinks.map((item) => (
-              <NavLink
+              <a
                 key={item.name}
-                to={item.link}
-                end={item.link === "/"}
+                href={item.link}
                 className={linkStyle}
               >
                 {item.name}
-              </NavLink>
+              </a>
             ))}
           </nav>
 
@@ -92,12 +86,12 @@ function Navbar({ topOffset = false }) {
                 GSTIN: 10DESPD3516K1ZM
               </span>
             </div>
-            <Link
-              to="/contact"
+            <a
+              href="/contact"
               className="rounded-full border border-rse-crimson bg-rse-crimson px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-rse-crimson/20 transition hover:border-rse-gold hover:bg-rse-gold hover:text-rse-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rse-gold"
             >
               Book a Service
-            </Link>
+            </a>
           </div>
 
           <button
@@ -133,8 +127,8 @@ function Navbar({ topOffset = false }) {
               onClick={(event) => event.stopPropagation()}
             >
               <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-5">
-                <Link
-                  to="/"
+                <a
+                  href="/"
                   onClick={() => setOpen(false)}
                   aria-label="RSE RO Service Experts home"
                   className="flex items-center gap-2.5"
@@ -152,7 +146,7 @@ function Navbar({ topOffset = false }) {
                       RO SERVICE EXPERTS
                     </span>
                   </span>
-                </Link>
+                </a>
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
@@ -164,15 +158,14 @@ function Navbar({ topOffset = false }) {
               </div>
               <div className="flex flex-col gap-2">
                 {navLinks.map((item) => (
-                  <NavLink
+                  <a
                     key={item.name}
-                    to={item.link}
-                    end={item.link === "/"}
+                    href={item.link}
                     onClick={() => setOpen(false)}
                     className={linkStyle}
                   >
                     {item.name}
-                  </NavLink>
+                  </a>
                 ))}
               </div>
               <div className="mt-auto grid gap-3 border-t border-white pt-5">
@@ -188,13 +181,13 @@ function Navbar({ topOffset = false }) {
                     GSTIN: 10DESPD3516K1ZM
                   </div>
                 </div>
-                <Link
-                  to="/contact"
+                <a
+                  href="/contact"
                   onClick={() => setOpen(false)}
                   className="rounded-xl bg-rse-crimson px-4 py-3 text-center font-bold text-white transition hover:bg-rse-gold hover:text-rse-text"
                 >
                   Book a Service
-                </Link>
+                </a>
               </div>
             </motion.nav>
           </motion.div>
